@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-color: honeydew;
+    --dark-accent-color: indianred;
+    --light-accent-color: limegreen;
+    --main-color: palegreen;
+}
+
+body {
+    background-color: var(--background-color);
+    max-width: 1000px;
+}
+
+/*
+Header styles
+*/
+
+header {
+    background-color: var(--main-color);
+    height: 100vh;
+    overflow: hidden;
+    width: 60px;
+}
+
+.header-icon-logo-container {
+    text-align: center;
+}
+
+.header-icon-logo-container i {
+    color: var(--dark-accent-color);
+    font-size: 2rem;
+    padding: 15px 0 15px 0;
+}
+
+.header-text-logo-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.header-text-logo-container h1 {
+    color: var(--light-accent-color);
+    font-family: "Courier New", monospace;
+    font-size: 2rem;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+}
+
+/*
+Header media queries (width)
+*/
+
+@media screen and (max-width: 500px) {
+    header {
+        width: 40px;
+    }
+
+    .header-icon-logo-container i,
+    .header-text-logo-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/*
+Header media queries (height)
+*/
+
+@media screen and (max-height: 400px) {
+    header {
+        display: flex;
+        height: 40px;
+        width: 100vw;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .header-icon-logo-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        width: 40px;
+    }
+
+    .header-icon-logo-container i {
+        padding: 0 0 0 0;
+    }
+
+    .header-text-logo-container h1 {
+        text-orientation: initial;
+        writing-mode: horizontal-tb;
+    }
+}
+
+/*
+Header media queries (width & height)
+*/
+
+@media screen and (max-width: 400px) and (max-height: 400px) {
+    
+}
+
+/*
+Main page styles
+*/
+
+/*
+About page styles
+*/
+
+/*
+Footer styles
+*/
