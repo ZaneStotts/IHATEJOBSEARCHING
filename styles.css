@@ -6,9 +6,6 @@
 
 :root {
     --background-color: honeydew;
-    --dark-accent-color: indianred;
-    --light-accent-color: limegreen;
-    --main-color: palegreen;
 }
 
 body {
@@ -22,7 +19,6 @@ Header styles
 */
 
 header {
-    background-color: var(--main-color);
     height: 100dvh;
     overflow: hidden;
     position: fixed;
@@ -34,7 +30,6 @@ header {
 }
 
 .header-icon-logo-container i {
-    color: var(--dark-accent-color);
     font-size: 2rem;
     padding: 15px 0 15px 0;
 }
@@ -46,8 +41,7 @@ header {
 }
 
 .header-text-logo-container h1 {
-    color: var(--light-accent-color);
-    font-family: Courier New, Monospace;
+    font-family: Monospace;
     font-size: 2rem;
     text-orientation: mixed;
     writing-mode: vertical-rl;
@@ -111,29 +105,29 @@ Main page styles
 */
 
 main {
-    background: linear-gradient(
-        lemonchiffon,
-        greenyellow,
-        springgreen
-    );
     height: 100dvh;
     margin: 0 0 0 60px;
 }
 
-.applications-submitted-container {
+.jobs-applied-container {
     text-align: center;
 }
 
-.applications-submitted-container h2 {
-    font-family: Monospace;
-    font-size: 1.5rem;
-    font-weight: normal;
+.jobs-applied-container h2 {
+    font-family: Courier New, Monospace;
+    font-size: 3rem;
     text-transform: uppercase;
 }
 
-.applications-submitted-container b {
+.jobs-applied-container p {
     font-family: Monospace;
-    font-size: 4rem;
+    font-size: 1.5rem;
+    padding: 0 0 30px 0;
+}
+
+.jobs-applied-container b {
+    font-family: Courier New, Monospace;
+    font-size: 6rem;
 }
 
 /*
