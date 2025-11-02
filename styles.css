@@ -109,25 +109,44 @@ main {
     margin: 0 0 0 60px;
 }
 
-.jobs-applied-container {
+.number-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    justify-content: center;
+}
+
+.start-date-container {
+    border-bottom: 4px solid black;
+    border-radius: 50px;
+    font-family: Monospace;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    width: fit-content;
+}
+
+.job-number-container,
+.interview-number-container {
     text-align: center;
 }
 
-.jobs-applied-container h2 {
+.job-number-container p,
+.interview-number-container p {
     font-family: Courier New, Monospace;
-    font-size: 3rem;
+    font-size: 5rem;
+}
+
+.job-number-container h2,
+.interview-number-container h2 {
+    border-bottom: 4px solid black;
+    border-radius: 50px;
+    font-family: Courier New, Monospace;
+    font-size: 2.5rem;
+    padding: 0 10px 0 10px;
     text-transform: uppercase;
-}
-
-.jobs-applied-container p {
-    font-family: Monospace;
-    font-size: 1.5rem;
-    padding: 0 0 30px 0;
-}
-
-.jobs-applied-container b {
-    font-family: Courier New, Monospace;
-    font-size: 6rem;
+    width: fit-content;
 }
 
 /*
