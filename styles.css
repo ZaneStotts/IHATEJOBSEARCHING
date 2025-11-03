@@ -6,6 +6,7 @@
 
 :root {
     --background-color: honeydew;
+    --text-color: dimgray;
 }
 
 body {
@@ -19,7 +20,7 @@ Header styles
 */
 
 header {
-    height: 100dvh;
+    background-color: var(--background-color);
     overflow: hidden;
     position: fixed;
     width: 60px;
@@ -30,6 +31,7 @@ header {
 }
 
 .header-icon-logo-container i {
+    color: var(--text-color);
     font-size: 2rem;
     padding: 15px 0 15px 0;
 }
@@ -41,6 +43,7 @@ header {
 }
 
 .header-text-logo-container h1 {
+    color: var(--text-color);
     font-family: Monospace;
     font-size: 2rem;
     text-orientation: mixed;
@@ -54,6 +57,10 @@ Header media queries (width)
 @media screen and (max-width: 500px) {
     header {
         width: 40px;
+    }
+
+    .header-icon-logo-container i {
+        padding: 10px 0 10px 0;
     }
 
     .header-icon-logo-container i,
@@ -101,12 +108,12 @@ Header media queries (height)
 }
 
 /*
-Main page styles
+Main styles
 */
 
 main {
     height: 100dvh;
-    margin: 0 0 0 60px;
+    padding: 0 65px 0 65px;
 }
 
 .welcome-section {
@@ -119,13 +126,18 @@ main {
 }
 
 .start-date-container {
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid var(--text-color);
+    border-top: 4px solid var(--background-color);
     border-radius: 50px;
     font-family: Courier New, Monospace;
     font-size: 1.3rem;
     text-align: center;
     padding: 10px 10px 10px 10px;
     width: fit-content;
+}
+
+.start-date-container p {
+    color: var(--text-color);
 }
 
 .job-number-container,
@@ -135,32 +147,47 @@ main {
 
 .job-number-container p,
 .interview-number-container p {
+    color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 5rem;
 }
 
 .job-number-container h2,
 .interview-number-container h2 {
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid var(--text-color);
+    border-top: 4px solid var(--background-color);
     border-radius: 50px;
+    color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 2.5rem;
     padding: 0 10px 0 10px;
+    text-transform: lowercase;
     width: fit-content;
 }
 
-.about-section-container h2 {
-    border-bottom: 4px solid black;
+.about-section h2,
+.applications-section h2 {
+    border-bottom: 4px solid var(--text-color);
+    border-top: 4px solid var(--background-color);
     border-radius: 50px;
+    color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 2.5rem;
     margin: 30px auto 30px auto;
     padding: 0 10px 0 10px;
     text-align: center;
+    text-transform: lowercase;
     width: fit-content;
 }
 
-.about-section-container p {
+.description-container {
+    margin: auto;
+    max-width: 600px;
+    text-align: justify;
+}
+
+.description-container p {
+    color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 1.2rem;
     font-weight: bold;
@@ -168,17 +195,17 @@ main {
 }
 
 /*
-Header media queries (height)
+Main media queries (width)
 */
 
-@media screen and (max-height: 500px) {
+@media screen and (max-width: 500px) {
     main {
-        padding: 40px 0 0 0;
+        padding: 0 45px 0 45px;
     }
 }
 
 /*
-About page styles
+About styles
 */
 
 /*
