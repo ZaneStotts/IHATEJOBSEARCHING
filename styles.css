@@ -194,6 +194,33 @@ main {
     padding: 15px 0 15px 0;
 }
 
+.list-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px auto 30px auto;
+    max-width: 600px;
+}
+
+.list-container ol {
+    color: var(--text-color);
+    font-family: Courier New, Monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.list-container ol li ul {
+    padding: 15px 0 15px 0;
+}
+
+.list-container ol li ul li {
+    font-family: Courier New, Monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    list-style-type: none;
+}
+
 /*
 Main media queries (width)
 */
