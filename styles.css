@@ -14,12 +14,12 @@ body {
 }
 
 /*
-Main styles
+Welcome section styles
 */
 
 main {
     height: 100dvh;
-    padding: 0 20px 0 20px;
+    padding: 0 30px 0 30px;
 }
 
 .welcome-section {
@@ -71,8 +71,59 @@ main {
     width: fit-content;
 }
 
-.about-section h2,
-.applications-section h2 {
+/*
+Welcome section media queries (width)
+*/
+
+@media screen and (max-width: 400px) {
+    .start-date-container {
+        font-size: 1rem;
+    }
+
+    .job-number-container p,
+    .interview-number-container p {
+        font-size: 4rem;
+    }
+
+    .job-number-container h2,
+    .interview-number-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .job-number-container p,
+    .interview-number-container p {
+        font-size: 3.5rem;
+    }
+
+    .job-number-container h2,
+    .interview-number-container h2 {
+        font-size: 1.5rem;
+    }    
+}
+
+@media screen and (max-width: 250px) {
+    main {
+        padding: 0 20px 0 20px;
+    }
+
+    .job-number-container p,
+    .interview-number-container p {
+        font-size: 3rem;
+    }
+
+    .job-number-container h2,
+    .interview-number-container h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/*
+About section styles
+*/
+
+.about-section h2 {
     border-bottom: 4px solid var(--text-color);
     border-top: 4px solid var(--background-color);
     border-radius: 50px;
@@ -98,6 +149,50 @@ main {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 15px 0 15px 0;
+}
+
+/*
+About section media queries (width)
+*/
+
+@media screen and (max-width: 400px) {
+    .about-section h2 {
+        font-size: 2rem;
+    }
+
+    .description-container p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .about-section h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/*
+Applications section styles
+*/
+
+.applications-section h2 {
+    border-bottom: 4px solid var(--text-color);
+    border-top: 4px solid var(--background-color);
+    border-radius: 50px;
+    color: var(--text-color);
+    font-family: Courier New, Monospace;
+    font-size: 2.5rem;
+    margin: 30px auto 30px auto;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    text-transform: lowercase;
+    width: fit-content;
 }
 
 .list-container {
@@ -128,16 +223,31 @@ main {
 }
 
 /*
-Main media queries (width)
+Applications section media queries
 */
 
-@media screen and (max-width: 350px) {
-    padding: 0 10px 0 10px;
+@media screen and (max-width: 400px) {
+    .applications-section h2 {
+        font-size: 2rem;
+    }
+
+    .list-container ol,
+    .list-container ol li ul li {
+        font-size: 1rem;
+    }
 }
 
-/*
-About styles
-*/
+@media screen and (max-width: 315px) {
+    .applications-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .applications-section h2 {
+        font-size: 1.2rem;
+    }
+}
 
 /*
 Footer styles
