@@ -138,6 +138,7 @@ About section styles
 }
 
 .description-container {
+    line-height: 1.4;
     margin: auto;
     max-width: 500px;
     text-align: justify;
@@ -205,10 +206,7 @@ Applications section styles
 }
 
 .list-container ol {
-    color: var(--text-color);
-    font-family: Courier New, Monospace;
-    font-size: 1.2rem;
-    font-weight: bold;
+    list-style-type: none;
 }
 
 .list-container ol li ul {
@@ -216,10 +214,25 @@ Applications section styles
 }
 
 .list-container ol li ul li {
+    color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 1.2rem;
     font-weight: bold;
+    line-height: 1.4;
     list-style-type: none;
+}
+
+.button-container {
+    margin: auto;
+    max-width: 500px;
+}
+
+.button-container button {
+    color: var(--text-color);
+    font-family: Courier New, Monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: lowercase;
 }
 
 /*
