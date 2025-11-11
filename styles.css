@@ -223,16 +223,13 @@ Applications section styles
 }
 
 .button-container {
-    margin: auto;
     max-width: 500px;
 }
 
 .button-container button {
-    color: var(--text-color);
-    font-family: Courier New, Monospace;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: lowercase;
+    background-color: var(--background-color);
+    border: none;
+    cursor: pointer;
 }
 
 /*
