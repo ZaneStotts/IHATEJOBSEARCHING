@@ -197,7 +197,7 @@ Applications section styles
 }
 
 .list-container {
-    align-items: center;
+    /* align-items: center */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -223,6 +223,9 @@ Applications section styles
 }
 
 .button-container {
+    align-items: center;
+    display: flex;
+    margin: auto;
     max-width: 500px;
 }
 
@@ -230,6 +233,25 @@ Applications section styles
     background-color: var(--background-color);
     border: none;
     cursor: pointer;
+    margin: 30px auto 30px auto;
+}
+
+.button-container h3 {
+    border-bottom: 4px solid var(--text-color);
+    border-top: 4px solid var(--background-color);
+    border-radius: 50px;
+    color: var(--text-color);
+    font-family: Courier New, Monospace;
+    font-size: 2rem;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    text-transform: lowercase;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.button-container h3:hover {
+    transform: scale(1.1);
 }
 
 /*
@@ -245,11 +267,19 @@ Applications section media queries
     .list-container ol li ul li {
         font-size: 1rem;
     }
+
+    .button-container h3 {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 315px) {
     .applications-section h2 {
         font-size: 1.5rem;
+    }
+
+    .button-container h3 {
+        font-size: 1.2rem;
     }
 }
 
