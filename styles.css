@@ -6,6 +6,7 @@
 
 :root {
     --background-color: honeydew;
+    --accent-color: palegreen;
     --text-color: dimgray;
 }
 
@@ -32,9 +33,9 @@ main {
 }
 
 .start-date-container {
-    border-bottom: 4px solid var(--text-color);
-    border-top: 4px solid var(--background-color);
+    background-color: var(--accent-color);
     border-radius: 50px;
+    box-shadow: 0 4px var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 1.3rem;
     text-align: center;
@@ -60,9 +61,9 @@ main {
 
 .job-number-container h2,
 .interview-number-container h2 {
-    border-bottom: 4px solid var(--text-color);
-    border-top: 4px solid var(--background-color);
+    background-color: var(--accent-color);
     border-radius: 50px;
+    box-shadow: 0 4px var(--text-color);
     color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 2.5rem;
@@ -124,9 +125,9 @@ About section styles
 */
 
 .about-section h2 {
-    border-bottom: 4px solid var(--text-color);
-    border-top: 4px solid var(--background-color);
+    background-color: var(--accent-color);
     border-radius: 50px;
+    box-shadow: 0 4px var(--text-color);
     color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 2.5rem;
@@ -183,9 +184,9 @@ Applications section styles
 */
 
 .applications-section h2 {
-    border-bottom: 4px solid var(--text-color);
-    border-top: 4px solid var(--background-color);
+    background-color: var(--accent-color);
     border-radius: 50px;
+    box-shadow: 0 4px var(--text-color);
     color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 2.5rem;
@@ -197,7 +198,6 @@ Applications section styles
 }
 
 .list-container {
-    /* align-items: center */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,9 +237,9 @@ Applications section styles
 }
 
 .button-container h3 {
-    border-bottom: 4px solid var(--text-color);
-    border-top: 4px solid var(--background-color);
+    background-color: var(--accent-color);
     border-radius: 50px;
+    box-shadow: 0 4px var(--text-color);
     color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 2rem;
