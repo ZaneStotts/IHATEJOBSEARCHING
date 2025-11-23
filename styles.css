@@ -32,6 +32,7 @@ main {
     justify-content: center;
 }
 
+/*
 .start-date-container {
     background-color: var(--accent-color);
     border-radius: 50px;
@@ -46,6 +47,7 @@ main {
 .start-date-container p {
     color: var(--text-color);
 }
+*/
 
 .job-number-container,
 .interview-number-container {
@@ -55,7 +57,7 @@ main {
 .job-number-container p,
 .interview-number-container p {
     color: var(--text-color);
-    font-family: Courier New, Monospace;
+    font-family: Monospace;
     font-size: 5rem;
 }
 
@@ -147,10 +149,19 @@ About section styles
 
 .description-container p {
     color: var(--text-color);
-    font-family: Courier New, Monospace;
+    font-family: Monospace;
     font-size: 1.2rem;
     font-weight: bold;
     padding: 15px 0 15px 0;
+}
+
+#warning {
+    color: indianred;
+}
+
+.warning {
+    text-decoration: underline;
+    text-transform: uppercase;
 }
 
 /*
@@ -215,7 +226,7 @@ Applications section styles
 
 .list-container ol li ul li {
     color: var(--text-color);
-    font-family: Courier New, Monospace;
+    font-family: Monospace;
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.4;
