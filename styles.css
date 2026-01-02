@@ -217,6 +217,7 @@ Applications section styles
 }
 
 .list-container ol {
+    display: none;
     list-style-type: none;
 }
 
