@@ -235,8 +235,11 @@ Applications section styles
 }
 
 .list-container ol {
-    display: none;
     list-style-type: none;
+}
+
+.list-container ol > li {
+    display: none;
 }
 
 .list-container ol li ul {
