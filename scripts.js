@@ -4,6 +4,8 @@ const applications = document.querySelectorAll("ol > li");
 // This variable constant represents the "see more" button
 const button = document.querySelector(".button-container button");
 
+// This is the number of applications visible when screen loads
+// I chose number 11 because index starts at 0
 let visibleApplications = 11;
 
 showApplications();
