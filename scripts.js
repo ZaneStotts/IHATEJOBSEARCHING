@@ -1,24 +1,35 @@
-// This variable constant represents the <p> tag with the number inside
-const frontApplicationNumber = document.querySelector (".job-number-container p");
+// This variable constant represents the <p> tag with the application number inside
+const appNumber = document.querySelector(".job-number-container p");
 
 // This variable represents the number currently being shown
 // It is a let variable because the value changes
-let currentApplicationNumber = 0;
+let currentAppNumber = 0;
 
 // This variable constant represents the number I want the counting animation to reach
-const frontApplicationNumberTarget = 736;
+const appNumberTarget = 736;
 
 // This variable constant represents in milliseconds how long it takes to complete the counting animation
-const frontApplicationNumberAnimationDuration = 2000;
+const appNumberAnimationDuration = 1500;
 
 // This variable constant represents an estimate of how often the browser updates the screen
 // It helps calculate how much the number in the counting animation should increase per frame
 const frameRate = 1000 / 60;
 
 // This variable constant represents how much the number should increase each frame
-const frontApplicationNumberAnimationIncrement = frontApplicationNumberTarget / (frontApplicationNumberAnimationDuration / frameRate);
+const appNumberIncrement = appNumberTarget / (appNumberAnimationDuration / frameRate);
 
-// Fill this spot in with the rest of the counting animation code
+function appNumberAnimation() {
+    currentAppNumber += appNumberIncrement;
+
+    if (currentAppNumber >= appNumberTarget) {
+        appNumber.textContent = appNumberTarget;
+    } else {
+        appNumber.textContent = Math.floor(currentAppNumber);
+        requestAnimationFrame(appNumberAnimation);
+    }
+}
+
+appNumberAnimation();
 
 // This variable constant represents applications list items
 const applications = document.querySelectorAll("ol > li");
