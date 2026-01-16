@@ -11,39 +11,37 @@ function countAnimation(htmlElement, targetNumber, animationDuration) {
     // This variable constant represents how much the number should increase each frame
     const animationIncrement = targetNumber / (animationDuration / frameRate);
 
+    // This function updates the number once per animation frame
     function countNumbers() {
         currentNumber += animationIncrement;
 
+        // Tells function to stop the animation if the final number is reached
         if (currentNumber >= targetNumber) {
             htmlElement.textContent = targetNumber;
         } else {
+            // Used "Math.floor" or else decimals would appear on screen
             htmlElement.textContent = Math.floor(currentNumber);
+            // This line tells the browser to run the function again on the next animation frame
             requestAnimationFrame(countNumbers);
         }
     }
 
+    // This calls function for the first time so the loop can start
     countNumbers();
 
 }
 
-/*
-
 // This variable constant represents the <p> tag with application number inside
-const appNumber = document.querySelector(".job-number-container p");
+const applicationNumber = document.querySelector(".job-number-container p");
+
+// Calls function to run the application count up to 736 over 2000 milliseconds
+countAnimation(applicationNumber, 736, 2000);
 
 // This variable constant represents the <p> tag with interview number inside
-const interviewNumber = document.querySelector("interview-number-container p");
+const interviewNumber = document.querySelector(".interview-number-container p");
 
-// This variable constant represents the number I want the counting animation to reach for applications
-const appNumberTarget = 736;
-
-// This variable constant represents the number I want the counting animation to reach for interviews
-const interviewNumberTarget = 9;
-
-// This variable constant represents in milliseconds how long it takes to complete the counting animation
-const countAnimationDuration = 2000;
-
-*/
+// Calls function to run the interview count up to 9 over 1000 milliseconds
+countAnimation(interviewNumber, 9, 1000);
 
 // This variable constant represents applications list items
 const applications = document.querySelectorAll("ol > li");
