@@ -32,37 +32,24 @@ main {
     justify-content: center;
 }
 
-/*
-.start-date-container {
-    background-color: var(--accent-color);
-    border-radius: 50px;
-    box-shadow: 0 4px var(--text-color);
-    font-family: Courier New, Monospace;
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 10px 10px 10px 10px;
-    width: fit-content;
-}
-
-.start-date-container p {
-    color: var(--text-color);
-}
-*/
-
 .job-number-container,
-.interview-number-container {
+.interview-number-container,
+.offer-number-container {
     text-align: center;
 }
 
 .job-number-container p,
-.interview-number-container p {
+.interview-number-container p,
+.offer-number-container p {
     color: var(--text-color);
     font-family: Monospace;
     font-size: 5rem;
+    opacity: 0;
 }
 
 .job-number-container h2,
-.interview-number-container h2 {
+.interview-number-container h2,
+.offer-number-container h2 {
     background-color: var(--accent-color);
     border-radius: 50px;
     box-shadow: 0 4px var(--text-color);
@@ -206,6 +193,28 @@ Data section styles
     text-align: center;
     text-transform: lowercase;
     width: fit-content;
+}
+
+/*
+Data section media queries
+*/
+
+@media screen and (max-width: 400px) {
+    .data-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .data-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .data-section h2 {
+        font-size: 1.2rem;
+    }
 }
 
 /*

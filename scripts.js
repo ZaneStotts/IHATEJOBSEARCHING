@@ -34,14 +34,50 @@ function countAnimation(htmlElement, targetNumber, animationDuration) {
 // This variable constant represents the <p> tag with application number inside
 const applicationNumber = document.querySelector(".job-number-container p");
 
-// Calls function to run the application count up to 736 over 2000 milliseconds
-countAnimation(applicationNumber, 736, 2000);
-
 // This variable constant represents the <p> tag with interview number inside
 const interviewNumber = document.querySelector(".interview-number-container p");
 
+// This variable constant represents the <p> tag with the offer number inside
+const offerNumber = document.querySelector(".offer-number-container p");
+
+// This line controls animation delay time for applications
+setTimeout(() => {
+    applicationNumber.style.opacity = "1";
+    countAnimation(applicationNumber, 736, 3000);
+}, 500);
+
+// This line controls animation delay time for interviews
+setTimeout(() => {
+    interviewNumber.style.opacity = "1";
+    countAnimation(interviewNumber, 9, 300);
+}, 4000);
+
+// This line controls animation delay for offers
+setTimeout(() => {
+    offerNumber.style.opacity = "1";
+    countAnimation(offerNumber, 1, 50);
+}, 5000);
+
+/*
+
+// Calls function to run the application count up to 736 over 3000 milliseconds
+countAnimation(applicationNumber, 736, 3000);
+
+*/
+
+/*
+
 // Calls function to run the interview count up to 9 over 1000 milliseconds
 countAnimation(interviewNumber, 9, 1000);
+
+*/
+
+/*
+
+// Calls function to run the offer count up to 1 over 500 milliseconds
+countAnimation(offerNumber, 1, 500);
+
+*/
 
 // This variable constant represents applications list items
 const applications = document.querySelectorAll("ol > li");
@@ -63,9 +99,12 @@ button.addEventListener("click", () => {
 })
 
 // This function loops through every <li> item and changes its display style from "none" to "block"
-// "index" is a local variable representing the numeric position of the current <li> item
 function showApplications() {
+
+    // "application" is the actual <li> element in the current interation of the loop
+    // "index" is a local variable representing the numeric position of the current <li> item
     applications.forEach((application, index) => {
+        // This line is a ternary operator showing only the first set of "visibleApplications" and hiding the rest
         application.style.display = index < visibleApplications ? "block" : "none";
     });
 }
