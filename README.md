@@ -47,7 +47,7 @@ It obviously isn't finished yet. It'll probably take me a while. Progress is slo
 
 ## Languages
 
-This website is entirely front end. Majority HTML and less CSS than usual. Probably the most JavaScript I've ever written for one of my projects before. I like seeing my improvement with languages which are more behind the scenes.
+This website is entirely front end. Largely HTML and less CSS than usual. Probably the most JavaScript I've ever written for one of my projects before. I like seeing my improvement with languages which are more behind the scenes.
 
 ## Design
 
@@ -58,3 +58,11 @@ My intention was not to make anything particularly flashy or visually striking. 
 I chose fonts which are guaranteed to render the same on all browsers. A minimal styling aesthetic. No excessively bright color schemes. I don't want visitors to ever be confused or question what is happening on the screen.
 
 ## Reflections
+
+This website has pushed me to try a lot new things with JavaScript so far, such as the counting animation when it first loads and the "see more" button function for the application list.
+
+Writing comments is another habit I'm trying to instill in myself so I can better comprehend what each line means and the logic behind it. I've always felt like I should be able to display and explain my reasoning behind each code choice. It also helps me make sense of what each element represents when I review things again.
+
+I still have more plans for visualizing data and adding sorting features. I want to make things more interactive for users.
+
+Honestly, most of my reflections for this project have little to do with web development and more to do with the story it personifies—my story. Anybody who has endured the grueling modern day job search process already understands.

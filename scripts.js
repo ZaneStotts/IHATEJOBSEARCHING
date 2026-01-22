@@ -58,26 +58,6 @@ setTimeout(() => {
     countAnimation(offerNumber, 1, 50);
 }, 5000);
 
-/*
-
-// Calls function to run the application count up to 736 over 3000 milliseconds
-countAnimation(applicationNumber, 736, 3000);
-
-*/
-
-/*
-
-// Calls function to run the interview count up to 9 over 1000 milliseconds
-countAnimation(interviewNumber, 9, 1000);
-
-*/
-
-/*
-
-// Calls function to run the offer count up to 1 over 500 milliseconds
-countAnimation(offerNumber, 1, 500);
-
-*/
 
 // This variable constant represents applications list items
 const applications = document.querySelectorAll("ol > li");
