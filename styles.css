@@ -334,3 +334,15 @@ Applications section media queries
 /*
 Footer styles
 */
+
+footer {
+    background-color: var(--background-color);
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+footer p {
+    color: var(--text-color);
+    font-family: Monospace;
+    font-size: 1rem;
+}

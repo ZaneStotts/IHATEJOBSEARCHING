@@ -33,7 +33,7 @@ My current job at the time was genuinely so unpleasant, I wanted out as fast as 
 
 Eventually, it happened.
 
-The cherished dream of becoming a web developer has been put on the side line for now, since the likelihood is incredibly small. I can't justify the amount of time and effort. But the quest still equipped me with useful skills and a new passion. So I guess I didn't walk away with nothing.
+The cherished dream of becoming a web developer has been put on the side line for now, since the likelihood is so incredibly small. I can't justify the amount of time and effort. But the quest still equipped me with useful skills and a new passion. So I guess I didn't walk away with nothing.
 
 I knew I had to do something with all the applications I documented over the years. They needed to exist outside of my private files. They needed to be shown to others. They needed to be a public testament to the crashing labor market of America.
 
@@ -65,4 +65,4 @@ Writing comments is another habit I'm trying to instill in myself so I can bette
 
 I still have more plans for visualizing data and adding sorting features. I want to make things more interactive for users.
 
-Honestly, most of my reflections for this project have little to do with web development and more to do with the story it personifies—my story. Anybody who has endured the grueling modern day job search process already understands.
+Honestly, most of my reflections for this project have little to do with web development and more to do with the story it personifies—my story. Anybody who has endured the grueling modern day job search process already understands. And those who don't understand are lucky.
