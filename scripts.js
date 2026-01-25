@@ -43,7 +43,7 @@ const offerNumber = document.querySelector(".offer-number-container p");
 // This line controls animation delay time for applications
 setTimeout(() => {
     applicationNumber.style.opacity = "1";
-    countAnimation(applicationNumber, 737, 3000);
+    countAnimation(applicationNumber, 738, 3000);
 }, 500);
 
 // This line controls animation delay time for interviews
