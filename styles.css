@@ -17,6 +17,17 @@ body {
 }
 
 /*
+Header section styles
+*/
+
+.heading-container h1 {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+/*
 Welcome section styles
 */
 
@@ -45,8 +56,9 @@ main {
 .interview-number-container p,
 .offer-number-container p {
     color: var(--text-color);
-    font-family: Monospace;
+    font-family: Courier New, Monospace;
     font-size: 5rem;
+    font-weight: bold;
     opacity: 0;
 }
 
@@ -139,7 +151,7 @@ About section styles
 
 .description-container p {
     color: var(--text-color);
-    font-family: Monospace;
+    font-family: Consolas, Monospace;
     font-size: 1.2rem;
     font-weight: bold;
     padding: 15px 0 15px 0;
@@ -260,7 +272,7 @@ Applications section styles
 
 .list-container ol li ul li {
     color: var(--text-color);
-    font-family: Monospace;
+    font-family: Consolas, Monospace;
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.4;
@@ -350,7 +362,7 @@ footer img {
 
 footer p {
     color: var(--text-color);
-    font-family: Monospace;
+    font-family: Consolas, Monospace;
     font-size: 1rem;
     padding: 10px 0 10px 0;
 }
