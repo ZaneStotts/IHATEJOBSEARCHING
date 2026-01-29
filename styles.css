@@ -24,24 +24,41 @@ header {
     background-color: var(--accent-color);
     border-radius: 0 0 50px 50px;
     box-shadow: 0 4px var(--text-color);
+    height: auto;
     padding: 5px 25px 10px 25px;
     position: fixed;
     width: 100%;
 }
 
+header nav {
+    display: flex;
+}
+
+.logo-container {
+    border-right: 2px solid var(--text-color);
+}
+
 .logo-container h1 {
     color: var(--text-color);
-    font-family: Courier New, Monospace;
+    font-family: Consolas, Monospace;
     font-size: 1.3rem;
+    padding: 0 15px 0 0;
     text-decoration: underline;
+}
+
+.links-container {
+    flex: 1;
+    padding: 0 0 0 13px;
 }
 
 .links-container ul {
     display: flex;
-    font-family: Consolas, Monospace;
+    font-family: Courier New, Monospace;
     font-size: 1.3rem;
+    font-weight: bold;
     height: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    letter-spacing: 1px;
     list-style-type: none;
     width: 100%;
 }
