@@ -34,25 +34,35 @@ header nav {
     display: flex;
 }
 
-.logo-container {
-    border-right: 2px solid var(--text-color);
-}
-
 .logo-container h1 {
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 1.3rem;
-    padding: 0 15px 0 0;
     text-decoration: underline;
 }
 
+.menu-button {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-family: Consolas, Monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
 .links-container {
+    display: none;
     flex: 1;
-    padding: 0 0 0 13px;
+}
+
+header.menu-open .links-container {
+    display: block;
 }
 
 .links-container ul {
     display: flex;
+    flex-direction: column;
     font-family: Consolas, Monospace;
     font-size: 1.3rem;
     font-weight: bold;

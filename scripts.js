@@ -1,3 +1,11 @@
+const header = document.querySelector("header");
+
+const menuButton = document.querySelector(".menu-button");
+
+menuButton.addEventListener("click", () => {
+    header.classList.toggle("menu-open");
+});
+
 function countAnimation(htmlElement, targetNumber, animationDuration) {
 
     // This variable represents the number currently being shown
