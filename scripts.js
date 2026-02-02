@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const openButton = document.getElementById("open-menu");
+    const closeButton = document.getElementById("close-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    openButton.addEventListener("click", () => {
+        navLinks.classList.add("show-menu");
+        openButton.style.display = "none";
+        closeButton.style.display = "block";
+    });
+
+    closeButton.addEventListener("click", () => {
+        navLinks.classList.remove("show-menu");
+        closeButton.style.display = "none";
+        openButton.style.display = "block";
+    });
+});
+
 function countAnimation(htmlElement, targetNumber, animationDuration) {
 
     // This variable represents the number currently being shown
