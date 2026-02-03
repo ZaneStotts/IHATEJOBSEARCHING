@@ -50,6 +50,7 @@ header nav {
 
 .links-container {
     flex: 1;
+    min-width: 0;
 }
 
 .links-container ul {
@@ -116,10 +117,10 @@ Header media queries
 @media screen and (max-width: 800px) {
     .links-container {
         background-color: var(--accent-color);
-        flex-direction: column;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
+        width: 100%;
         z-index: 1;
     }
 
@@ -146,6 +147,7 @@ Header media queries
 
     .menu-button-container {
         display: block;
+        margin-left: auto;
         width: 100%;
     }
 }
