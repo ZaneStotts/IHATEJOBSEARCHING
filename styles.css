@@ -24,8 +24,13 @@ header {
     background-color: var(--accent-color);
     border-radius: 0 0 50px 50px;
     box-shadow: 0 4px var(--text-color);
+    left: 0;
     padding: 5px 25px 10px 25px;
     position: fixed;
+    margin: auto;
+    max-width: 800px;
+    right: 0;
+    top: 0;
     width: 100%;
 }
 
@@ -39,7 +44,21 @@ header nav {
     color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 1.3rem;
-    text-decoration: underline;
+}
+
+.divider-container {
+    padding: 0 15px 0 15px;
+}
+
+.divider-container p {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.links-container {
+    flex: 1;
 }
 
 .links-container ul {
@@ -58,11 +77,19 @@ header nav {
 
 .links-container li a {
     color: var(--text-color);
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 0.3s;
+}
+
+.links-container li a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--text-color);
 }
 
 .menu-button-container {
     background-color: var(--accent-color);
+    display: none;
     font-size: 1.3rem;
     padding: 0 10px 0 0;
     text-align: right;
