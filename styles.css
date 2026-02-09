@@ -113,6 +113,20 @@ header nav {
 Header media queries
 */
 
+@media screen and (max-width: 700px) {
+    .divider-container {
+        display: none;
+    }
+
+    .links-container ul {
+        flex-direction: column;
+    }
+
+    .menu-button-container {
+        display: block;
+    }
+}
+
 /*
 Welcome section styles
 */
