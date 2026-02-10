@@ -109,9 +109,83 @@ header nav {
     transform: scale(1.1);
 }
 
+
+
+
+.menu-button-container button:nth-child(1) { /* down arrow */
+    display: block;
+}
+
+.menu-button-container button:nth-child(2) { /* up arrow */
+    display: none;
+}
+
+header.menu-open .menu-button-container button:nth-child(1) {
+    display: none;
+}
+
+header.menu-open .menu-button-container button:nth-child(2) {
+    display: block;
+}
+
+
 /*
 Header media queries
 */
+
+@media screen and (max-width: 700px) {
+
+    /* Keep nav as a row, but allow wrapping */
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* Hide the divider */
+    .divider-container {
+        display: none;
+    }
+
+    /* Logo takes the center of the first row */
+    .logo-container {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .logo-container h1 {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Menu button sits to the right of the logo in the same row */
+    .menu-button-container {
+        display: block;
+        margin-left: auto; /* pushes it to the far right of the row */
+    }
+
+    /* Links wrap to the next line and center */
+    .links-container {
+        flex-basis: 100%;  /* forces links onto their own row */
+        order: 3;          /* make sure they appear after logo + button */
+        margin-top: 10px;
+    }
+
+    .links-container ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .links-container {
+        display: none;
+    }
+
+    header.menu-open .links-container {
+        display: block;
+    }
+
+}
 
 @media screen and (max-width: 700px) {
     .divider-container {
