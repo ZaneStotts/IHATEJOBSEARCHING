@@ -1,11 +1,9 @@
 const header = document.querySelector("header");
-    const menuButtons = document.querySelectorAll(".menu-button-container button");
+const menuButton = document.querySelector(".open-menu");
 
-    menuButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            header.classList.toggle("menu-open");
-        });
-    });
+menuButton.addEventListener("click", () => {
+    header.classList.toggle("menu-open");
+});
 
 
 
