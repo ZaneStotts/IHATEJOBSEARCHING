@@ -40,8 +40,15 @@ header nav {
     z-index: 1;
 }
 
-.logo-container h1 {
+.long-logo {
     color: var(--text-color);
+    font-family: Courier New, Monospace;
+    font-size: 1.3rem;
+}
+
+.short-logo {
+    color: var(--text-color);
+    display: none;
     font-family: Courier New, Monospace;
     font-size: 1.3rem;
 }
@@ -90,13 +97,13 @@ header nav {
 .menu-button-container {
     background-color: var(--accent-color);
     display: none;
-    padding: 0 10px 0 0;
     text-align: right;
 }
 
 .menu-button-container button {
     background-color: var(--accent-color);
     border: none;
+    cursor: pointer;
 }
 
 .menu-button-container i {
@@ -106,7 +113,7 @@ header nav {
 }
 
 .menu-button-container i:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /*
@@ -129,7 +136,7 @@ Header media queries
         max-height: 0;
         order: 3;
         overflow: hidden;
-        transition: max-height 0.3s linear;
+        transition: max-height 0.5s ease-in-out;
     }
 
     .links-container ul {
@@ -147,7 +154,31 @@ Header media queries
     }
 
     header.menu-open .links-container {
+        border-top: 2px solid var(--text-color);
+        margin: 5px 0 0 0;
         max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .long-logo,
+    .short-logo {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .long-logo {
+        display: none;
+    }
+
+    .short-logo {
+        display: block;
+    }
+
+    .links-container ul,
+    .menu-button-container i {
+        font-size: 1.1rem;
     }
 }
 
@@ -210,24 +241,28 @@ Welcome section media queries (width)
     }
 
     .job-number-container p,
-    .interview-number-container p {
+    .interview-number-container p,
+    .offer-number-container p {
         font-size: 4rem;
     }
 
     .job-number-container h2,
-    .interview-number-container h2 {
+    .interview-number-container h2,
+    .offer-number-container h2 {
         font-size: 1.8rem;
     }
 }
 
 @media screen and (max-width: 315px) {
     .job-number-container p,
-    .interview-number-container p {
+    .interview-number-container p,
+    .offer-number-container p {
         font-size: 3.5rem;
     }
 
     .job-number-container h2,
-    .interview-number-container h2 {
+    .interview-number-container h2,
+    .offer-number-container h2 {
         font-size: 1.5rem;
     }    
 }
