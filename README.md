@@ -17,11 +17,13 @@ It hardened me.
 
 It changed me fundamentally as a human. It taught me many difficult lessons about life I would've never learned another way.
 
-Anybody viewing this website is looking at more than a log of applications. Visitors are looking at how I spent hours spent every single day. Weekends of nothing but browsing online job boards. Months of effort poured into crafting resumes, filling out employment history on repeat, answering a million questionnaires about my race and disability status. It's a peculiar kind of pain.
+There are two versions of me now. There is a pre-job-search Zane and a post-job-search Zane. They are very different people.
+
+Anybody viewing this website is looking at more than a log of applications. Visitors are looking at how I spent hours spent every single day. Weekends of nothing but browsing online job boards. Months of effort poured into crafting resumes, filling out employment history on repeat, answering a million questionnaires about my race and disability status. It's a peculiar type of pain.
 
 When I first began this journey, my original goal was to switch career paths to something technology related and ideally remote.
 
-I was applying to beginner roles for call centers, customer service reprsentatives data entry, and similar product support stuff.
+I was applying to beginner roles for call centers, customer service reprsentatives, data entry, and similar product support stuff.
 
 But once I started feeling more confident in my programming skills and gaining certifications, I shifted focus over to the web development field. Openings in user experience, web design, front end maintenance, some back end processing work as well. Basically anything involving typing code on a computer.
 

@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -287,6 +288,10 @@ Welcome section media queries (width)
 About section styles
 */
 
+.about-section {
+    padding: 35px 0 0 0;
+}
+
 .about-section h2 {
     background-color: var(--accent-color);
     border-radius: 50px;
@@ -355,6 +360,10 @@ About section media queries (width)
 Data section styles
 */
 
+.data-section {
+    padding: 35px 0 0 0;
+}
+
 .data-section h2 {
     background-color: var(--accent-color);
     border-radius: 50px;
@@ -394,6 +403,10 @@ Data section media queries
 /*
 Applications section styles
 */
+
+.applications-section {
+    padding: 35px 0 0 0;
+}
 
 .applications-section h2 {
     background-color: var(--accent-color);

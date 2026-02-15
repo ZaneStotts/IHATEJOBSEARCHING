@@ -1,12 +1,25 @@
+// This variable constant represents the header element
 const header = document.querySelector("header");
+
+// This variable constant represents the menu button
 const menuButton = document.querySelector(".open-menu");
 
+// Event listener tells the arrow function runs when the menu button is clicked
 menuButton.addEventListener("click", () => {
     header.classList.toggle("menu-open");
 });
 
+// This variable constant represents every <a> tag in the menu
+const navLinks = document.querySelectorAll(".links-container a");
 
+// Loops through links in the menu and attaches an click event listener to each one
+navLinks.forEach(link => {
 
+    // This line removes the "menu-open" class after a link is clicked so the menu can collapse
+    link.addEventListener("click", () => {
+        header.classList.remove("menu-open");
+    });
+});
 
 function countAnimation(htmlElement, targetNumber, animationDuration) {
 
