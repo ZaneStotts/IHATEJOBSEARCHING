@@ -32,7 +32,13 @@ header {
     max-width: 800px;
     right: 0;
     top: 0;
+    transform: translateY(0);
+    transition: transform 0.4s ease-in-out;
     width: 100%;
+}
+
+.header-hidden {
+    transform: translateY(-120%);
 }
 
 header nav {

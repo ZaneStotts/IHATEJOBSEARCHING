@@ -21,6 +21,29 @@ navLinks.forEach(link => {
     });
 });
 
+
+
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    if (header.classList.contains('menu-open')) return;
+
+    const currentScrollY = window.scrollY;
+
+    // If scrolling down and not at the very top
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        header.classList.add('header-hidden');
+    } else {
+        header.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+});
+
+
+
+
 function countAnimation(htmlElement, targetNumber, animationDuration) {
 
     // This variable represents the number currently being shown
