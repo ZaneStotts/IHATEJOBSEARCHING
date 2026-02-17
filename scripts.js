@@ -23,7 +23,6 @@ navLinks.forEach(link => {
 
 
 
-
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
@@ -31,7 +30,7 @@ window.addEventListener('scroll', () => {
 
     const currentScrollY = window.scrollY;
 
-    // If scrolling down and not at the very top
+    // 
     if (currentScrollY > lastScrollY && currentScrollY > 50) {
         header.classList.add('header-hidden');
     } else {
@@ -43,6 +42,21 @@ window.addEventListener('scroll', () => {
 
 
 
+// This event listener listens for a click anywhere in the screen
+// "event" is an object automatically created by the browser each time something happens, which in this case is a click
+document.addEventListener("click", (event) => {
+
+  // This line means the code runs only if the menu is open
+  if (!header.classList.contains("menu-open")) return;
+
+  // This line returns true if a click is inside the header
+  // Makes sure not to close header if click occurs inside it
+  // "event.target" stores information about what element was clicked on
+  if (header.contains(event.target)) return;
+
+  // This line tells header to close by removing "menu-open" class if a click occurs anywhere outside the header
+  header.classList.remove("menu-open");
+});
 
 function countAnimation(htmlElement, targetNumber, animationDuration) {
 
