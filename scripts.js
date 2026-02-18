@@ -4,7 +4,7 @@ const header = document.querySelector("header");
 // This variable constant represents the menu button
 const menuButton = document.querySelector(".open-menu");
 
-// Event listener tells the arrow function runs when the menu button is clicked
+// Event listener tells the arrow function to run when the menu button is clicked
 menuButton.addEventListener("click", () => {
     header.classList.toggle("menu-open");
 });
@@ -21,23 +21,34 @@ navLinks.forEach(link => {
     });
 });
 
+// This variable represents the user's initial scroll position
+// Uses "let" instead of "const" because the value will be changing
+// The value of this variable is used to compare against future scroll positions in order to detect if user is scrolling up or down
+let lastScroll = window.scroll;
 
+// This event listener listens for every time page is scrolled
+window.addEventListener("scroll", () => {
 
-let lastScrollY = window.scrollY;
+    // This line tells the header not to move out out of view if menu is open
+    if (header.classList.contains("menu-open")) return;
 
-window.addEventListener('scroll', () => {
-    if (header.classList.contains('menu-open')) return;
+    // This variable constant represents user's current scroll position
+    // The value of this variable is compared against lastScroll to determine scroll direction
+    const currentScroll = window.scroll;
 
-    const currentScrollY = window.scrollY;
+    // This if statement tracks if user scrolls down
+    // If currentScroll is greater than lastScroll and also more than 30 pixels from the top, then it activates the "header-hidden" class in order to make header slide up
+    if (currentScroll > lastScroll && currentScroll > 30) {
+        header.classList.add("header-hidden");
 
-    // 
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        header.classList.add('header-hidden');
+    // This line tells website to remove "header-hidden" class and allow header to be seen if user scrolls up
     } else {
-        header.classList.remove('header-hidden');
+        header.classList.remove("header-hidden");
     }
 
-    lastScrollY = currentScrollY;
+    // This line updates the value of lastScroll to the currentScroll value
+    // This needs to happen so lastScroll can againcompare values with currentScroll when another scroll event occurs
+    lastScroll = currentScroll;
 });
 
 
