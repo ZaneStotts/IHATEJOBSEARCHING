@@ -196,16 +196,21 @@ Welcome section styles
 main {
     height: 100dvh;
     flex: 1;
-    padding: 0 30px 0 30px;
 }
 
 .welcome-section {
     align-items: center;
+    background: linear-gradient(
+        to bottom,
+        var(--background-color) 80%,
+        var(--accent-color) 100%
+        );
     display: flex;
     flex-direction: column;
     gap: 60px;
     height: 100dvh;
     justify-content: center;
+    padding: 0 30px 0 30px;
 }
 
 .job-number-container,
@@ -295,7 +300,7 @@ About section styles
 */
 
 .about-section {
-    padding: 35px 0 0 0;
+    padding: 35px 30px 0 30px;
 }
 
 .about-section h2 {
@@ -367,7 +372,7 @@ Data section styles
 */
 
 .data-section {
-    padding: 35px 0 0 0;
+    padding: 35px 30px 0 30px;
 }
 
 .data-section h2 {
@@ -411,7 +416,7 @@ Applications section styles
 */
 
 .applications-section {
-    padding: 35px 0 0 0;
+    padding: 35px 30px 0 30px;
 }
 
 .applications-section h2 {
