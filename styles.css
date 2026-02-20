@@ -11,6 +11,12 @@
     --text-color: dimgray;
 }
 
+.dark-mode {
+    --background-color-dark: dimgray;
+    --accent-color-dark: honeydew;
+    --text-color-dark: palegreen;
+}
+
 body {
     background-color: var(--background-color);
     display: flex;
@@ -200,11 +206,13 @@ main {
 
 .welcome-section {
     align-items: center;
+    /*
     background: linear-gradient(
         to bottom,
         var(--background-color) 80%,
         var(--accent-color) 100%
         );
+    */
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -293,6 +301,31 @@ Welcome section media queries (width)
     .interview-number-container h2 {
         font-size: 1.2rem;
     }
+}
+
+/*
+Dark mode feature styles
+*/
+
+.dark-mode-button {
+    background-color: var(--accent-color);
+    border: 3px solid transparent;
+    border-radius: 50%;
+    bottom: 15px;
+    cursor: pointer;
+    outline: 2px solid var(--text-color);
+    position: fixed;
+    right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dark-mode-button:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode-button i {
+    color: var(--text-color);
+    font-size: 2rem;
 }
 
 /*
