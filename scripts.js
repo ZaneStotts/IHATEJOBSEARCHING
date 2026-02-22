@@ -51,8 +51,6 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll;
 });
 
-
-
 // This event listener listens for a click anywhere in the screen
 // "event" is an object automatically created by the browser each time something happens, which in this case is a click
 document.addEventListener("click", (event) => {
@@ -68,6 +66,29 @@ document.addEventListener("click", (event) => {
   // This line tells header to close by removing "menu-open" class if a click occurs anywhere outside the header
   header.classList.remove("menu-open");
 });
+
+
+
+// This variable constant represents the dark mode button itself
+const darkModeButton = document.querySelector(".dark-mode-button");
+
+// This variable constant represents the <html> element
+const root = document.documentElement;
+
+// "colorKey" stores user's color preference
+// This line tells the website to activate "dark-mode" class if "dark" is the value last saved in "colorKey"
+if (localStorage.getItem("colorKey") === "dark") {
+  root.classList.add("dark-mode");
+}
+
+darkModeButton.addEventListener("click", () => {
+  root.classList.toggle("dark-mode");
+
+  const isDark = root.classList.contains("dark-mode");
+  localStorage.setItem("colorKey", isDark ? "dark" : "light");
+});
+
+
 
 function countAnimation(htmlElement, targetNumber, animationDuration) {
 
