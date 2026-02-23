@@ -23,6 +23,7 @@ body {
     flex-direction: column;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+
 /*
 Header section styles
 */

@@ -1,3 +1,5 @@
+// HEADER MENU OPEN/CLOSE FEATURE
+
 // This variable constant represents the header element
 const header = document.querySelector("header");
 
@@ -20,6 +22,8 @@ navLinks.forEach(link => {
         header.classList.remove("menu-open");
     });
 });
+
+// DISAPPEAR HEADER ON SCROLL FEATURE
 
 // This variable represents the user's initial scroll position
 // Uses "let" instead of "const" because the value will be changing
@@ -67,7 +71,7 @@ document.addEventListener("click", (event) => {
   header.classList.remove("menu-open");
 });
 
-
+// DARK MODE FEATURE
 
 // This variable constant represents the dark mode button itself
 const darkModeButton = document.querySelector(".dark-mode-button");
@@ -78,17 +82,26 @@ const root = document.documentElement;
 // "colorKey" stores user's color preference
 // This line tells the website to activate "dark-mode" class if "dark" is the value last saved in "colorKey"
 if (localStorage.getItem("colorKey") === "dark") {
-  root.classList.add("dark-mode");
+    root.classList.add("dark-mode");
 }
 
+// This line adds an event listener that runs an arrow function when dark mode button is clicked
 darkModeButton.addEventListener("click", () => {
-  root.classList.toggle("dark-mode");
 
-  const isDark = root.classList.contains("dark-mode");
-  localStorage.setItem("colorKey", isDark ? "dark" : "light");
+    // This line adds or removes the "dark-mode" class to the <html> element
+    root.classList.toggle("dark-mode");
+
+    // This line asks if root (which is the <html> element) contains the "dark-mode class"
+    // This variable constant stores boolean values, true ("dark") or false ("light")
+    const isDark = root.classList.contains("dark-mode");
+
+    // This line saves the current color preference to localStorage
+    // Used a ternary operator as a compacted if else statement
+    // This line asks if isDark is true ("dark") or false ("light") and stores the answer in "colorKey"
+    localStorage.setItem("colorKey", isDark ? "dark" : "light");
 });
 
-
+// WELCOME PAGE NUMBER COUNTER FEATURE
 
 function countAnimation(htmlElement, targetNumber, animationDuration) {
 
@@ -150,6 +163,7 @@ setTimeout(() => {
     countAnimation(offerNumber, 1, 50);
 }, 5000);
 
+// SEE MORE APPLICATIONS BUTTON FEATURE
 
 // This variable constant represents applications list items
 const applications = document.querySelectorAll("ol > li");
