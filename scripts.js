@@ -28,7 +28,7 @@ navLinks.forEach(link => {
 // This variable represents the user's initial scroll position
 // Uses "let" instead of "const" because the value will be changing
 // The value of this variable is used to compare against future scroll positions in order to detect if user is scrolling up or down
-let lastScroll = window.scroll;
+let lastScroll = window.scrollY;
 
 // This event listener listens for every time page is scrolled
 window.addEventListener("scroll", () => {
@@ -38,22 +38,28 @@ window.addEventListener("scroll", () => {
 
     // This variable constant represents user's current scroll position
     // The value of this variable is compared against lastScroll to determine scroll direction
-    const currentScroll = window.scroll;
+    const currentScroll = window.scrollY;
 
     // This if statement tracks if user scrolls down
     // If currentScroll is greater than lastScroll and also more than 30 pixels from the top, then it activates the "header-hidden" class in order to make header slide up
     if (currentScroll > lastScroll && currentScroll > 30) {
         header.classList.add("header-hidden");
 
+        darkModeButton.classList.add("dark-mode-hidden");
+
     // This line tells website to remove "header-hidden" class and allow header to be seen if user scrolls up
     } else {
         header.classList.remove("header-hidden");
+
+        darkModeButton.classList.remove("dark-mode-hidden");
     }
 
     // This line updates the value of lastScroll to the currentScroll value
     // This needs to happen so lastScroll can againcompare values with currentScroll when another scroll event occurs
     lastScroll = currentScroll;
 });
+
+// CLICK OUTSIDE HEADER TO CLOSE FEATURE
 
 // This event listener listens for a click anywhere in the screen
 // "event" is an object automatically created by the browser each time something happens, which in this case is a click

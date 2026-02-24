@@ -13,8 +13,8 @@
 
 .dark-mode {
     --background-color: dimgray;
-    --accent-color: honeydew;
-    --text-color: palegreen;
+    --accent-color: palegreen;
+    --text-color: honeydew;
 }
 
 body {
@@ -305,12 +305,12 @@ Dark mode feature styles
     background-color: var(--accent-color);
     border: 3px solid transparent;
     border-radius: 50%;
-    bottom: 15px;
+    bottom: 10px;
     cursor: pointer;
     outline: 2px solid var(--text-color);
     position: fixed;
-    right: 15px;
-    transition: transform 0.3s ease-in-out;
+    right: 10px;
+    transition: transform 0.4s ease-in-out;
 }
 
 .dark-mode-button:hover {
@@ -320,6 +320,10 @@ Dark mode feature styles
 .dark-mode-button i {
     color: var(--text-color);
     font-size: 2rem;
+}
+
+.dark-mode-button.dark-mode-hidden {
+    transform: translateY(50px);
 }
 
 /*
