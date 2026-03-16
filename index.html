@@ -124,7 +124,10 @@
                 </h2>
                 <div class="sort-container">
                     <form>
-                        <select>
+                        <label for="time-sort">
+                            Sort by time
+                        </label>
+                        <select id="time-sort">
                             <option value="latest" selected>
                                 Latest
                             </option>
@@ -132,7 +135,10 @@
                                 Oldest
                             </option>
                         </select>
-                        <select>
+                        <label for="location-sort">
+                            Sort by location
+                        </label>
+                        <select id="location-sort">
                             <option value="" selected>
                             </option>
                             <option value="on-site">
@@ -142,7 +148,10 @@
                                 Remote
                             </option>
                         </select>
-                        <select>
+                        <label for="applied-sort">
+                            Sort by application method
+                        </label>
+                        <select id="applied-sort">
                             <option value="" selected>
                             </option>
                             <option value="company-website">
@@ -154,6 +163,9 @@
                             <option value="indeed">
                                 Indeed
                             </option>
+                            <option value="in-person">
+                                In person
+                            </option>
                             <option value="linkedin">
                                 LinkedIn
                             </option>
@@ -161,7 +173,10 @@
                                 ZipRecruiter
                             </option>
                         </select>
-                        <select>
+                        <label for="status-sort">
+                            Sort by status
+                        </label>
+                        <select id="status-sort">
                             <option value="" selected>
                             </option>
                             <option value="interviewed">
@@ -175,6 +190,9 @@
                             </option>
                             <option value="offer">
                                 Offer
+                            </option>
+                            <option value="under-review">
+                                Under review
                             </option>
                             <option value="withdrawn">
                                 Withdrawn

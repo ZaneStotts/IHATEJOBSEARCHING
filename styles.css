@@ -464,6 +464,22 @@ Applications section styles
     width: fit-content;
 }
 
+.sort-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 500px;
+}
+
+.sort-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-container form label {
+    text-transform: lowercase;
+}
+
 .list-container {
     display: flex;
     flex-direction: column;
