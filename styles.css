@@ -443,6 +443,42 @@ Data section media queries
 }
 
 /*
+Sorting section styles
+*/
+
+.sort-container {
+    justify-content: center;
+    margin: auto;
+    max-width: 500px;
+}
+
+.sort-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-container form label {
+    text-transform: lowercase;
+}
+
+.sort-container form select {
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 50px;
+    //box-shadow: 0 4px var(--text-color);
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+    text-transform: lowercase;
+}
+
+.sort-container form select:focus {
+    outline: none;
+}
+
+/*
 Applications section styles
 */
 
@@ -462,22 +498,6 @@ Applications section styles
     text-align: center;
     text-transform: lowercase;
     width: fit-content;
-}
-
-.sort-container {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    max-width: 500px;
-}
-
-.sort-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.sort-container form label {
-    text-transform: lowercase;
 }
 
 .list-container {
