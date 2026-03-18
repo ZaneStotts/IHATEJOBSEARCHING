@@ -449,33 +449,49 @@ Sorting section styles
 .sort-container {
     justify-content: center;
     margin: auto;
-    max-width: 500px;
+    max-width: 350px;
 }
 
 .sort-container form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .sort-container form label {
+    color: var(--text-color);
+    font-family: Courier New, Monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 0 15px 0;
+    text-align: center;
     text-transform: lowercase;
 }
 
 .sort-container form select {
+    appearance: none;
     background-color: var(--background-color);
-    border: none;
+    border: 3px solid var(--text-color);
     border-radius: 50px;
-    //box-shadow: 0 4px var(--text-color);
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 1rem;
     font-weight: bold;
     padding: 5px 0 5px 0;
+    text-align: center;
     text-transform: lowercase;
 }
 
 .sort-container form select:focus {
     outline: none;
+}
+
+.sort-container form select:hover {
+    cursor: pointer;
+}
+
+.sort-container form select option {
+    font-weight: bold;
 }
 
 /*
