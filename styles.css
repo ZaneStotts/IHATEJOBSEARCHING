@@ -449,7 +449,7 @@ Sorting section styles
 .sort-container {
     justify-content: center;
     margin: auto;
-    max-width: 350px;
+    max-width: 310px;
 }
 
 .sort-container form {
@@ -471,8 +471,7 @@ Sorting section styles
 .sort-container form select {
     appearance: none;
     background-color: var(--background-color);
-    border: 3px solid var(--text-color);
-    border-radius: 50px;
+    border: 1px solid var(--text-color);
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 1rem;
