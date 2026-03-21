@@ -169,34 +169,98 @@ setTimeout(() => {
     countAnimation(offerNumber, 1, 50);
 }, 5000);
 
+// SORT APPLICATIONS FEATURE
+
+
+// Cache original order on page load
+let originalOrder = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const list = document.querySelector(".applications-list");
+    originalOrder = Array.from(list.querySelectorAll(".application"));
+    handleSort();
+});
+
+// Attach listeners
+document.getElementById("time-sort").addEventListener("change", handleSort);
+document.getElementById("location-sort").addEventListener("change", handleSort);
+document.getElementById("applied-sort").addEventListener("change", handleSort);
+document.getElementById("status-sort").addEventListener("change", handleSort);
+
+function handleSort() {
+    const time = document.getElementById("time-sort").value;
+    const location = document.getElementById("location-sort").value;
+    const applied = document.getElementById("applied-sort").value;
+    const status = document.getElementById("status-sort").value;
+
+    const list = document.querySelector(".applications-list");
+
+    // Start with original order
+    let items = [...originalOrder];
+
+    // 1. FILTER
+    const filtered = items.filter(item => {
+        // LOCATION
+        if (location && !item.querySelector(".location." + location)) return false;
+
+        // APPLICATION METHOD
+        if (applied && !item.querySelector("." + applied)) return false;
+
+        // STATUS
+        if (status && !item.querySelector("." + status)) return false;
+
+        return true;
+    });
+
+    // 2. SORT BY TIME (reverse or not)
+    if (time === "oldest") {
+        filtered.reverse();
+    }
+
+    // 3. CLEAR LIST FIRST
+    list.innerHTML = "";
+
+    // 4. INSERT FILTERED ITEMS
+    filtered.forEach(item => list.appendChild(item));
+
+    // 5. RESET VISIBLE COUNT
+    visibleApplications = 10;
+
+    // 6. SHOW FIRST 10 OF FILTERED LIST
+    showApplications();
+}
+
+
 // SEE MORE APPLICATIONS BUTTON FEATURE
 
-// This variable constant represents applications list items
-const applications = document.querySelectorAll("ol > li");
+// Instead of a static NodeList, make this a function
+function getApplications() {
+    return document.querySelectorAll(".applications-list > .application");
+}
 
-// This variable constant represents the "see more" button
+// "See more" button
 const button = document.querySelector(".button-container button");
 
-// This is the number of applications visible when screen loads
-// I chose number 11 because index starts at 0
-let visibleApplications = 11;
+// Start with 10 visible applications
+let visibleApplications = 10;
 
-// This calls a function in order to render the first set of visible applications
+// Show the first set on page load
 showApplications();
 
-// This creates event listener so 10 more applications are made visible when "see more" button is clicked
+// Reveal 10 more when button is clicked
 button.addEventListener("click", () => {
     visibleApplications += 10;
     showApplications();
-})
+});
 
-// This function loops through every <li> item and changes its display style from "none" to "block"
+// Show/hide applications based on visibleApplications
 function showApplications() {
+    const applications = getApplications(); // always fresh list
 
-    // "application" is the actual <li> element in the current interation of the loop
-    // "index" is a local variable representing the numeric position of the current <li> item
     applications.forEach((application, index) => {
-        // This line is a ternary operator showing only the first set of "visibleApplications" and hiding the rest
         application.style.display = index < visibleApplications ? "block" : "none";
     });
+
+    // Hide button if all items are visible
+    button.style.visibility = applications.length > visibleApplications ? "visible" : "hidden";
 }
