@@ -130,8 +130,10 @@ function countAnimation(htmlElement, targetNumber, animationDuration) {
         if (currentNumber >= targetNumber) {
             htmlElement.textContent = targetNumber;
         } else {
+
             // Used "Math.floor" or else decimals would appear on screen
             htmlElement.textContent = Math.floor(currentNumber);
+
             // This line tells the browser to run the function again on the next animation frame
             requestAnimationFrame(countNumbers);
         }
@@ -171,65 +173,84 @@ setTimeout(() => {
 
 // SORT APPLICATIONS FEATURE
 
+// This variable creates an empty array which is used to store <li> elements in original DOM order
+// By nature, the original order is from newest to oldest because I entered them in that sequence
+// Used "let" since the value will change later
+// Each time the sorting feature is used, it starts from this original order
+let originalApplicationsOrder = [];
 
-// Cache original order on page load
-let originalOrder = [];
-
+// This line creates an event listener to run the following code only after HTML is loaded
 document.addEventListener("DOMContentLoaded", () => {
-    const list = document.querySelector(".applications-list");
-    originalOrder = Array.from(list.querySelectorAll(".application"));
-    handleSort();
+
+    // This constant variable represents the element with the class "applications-list"
+    // ".applications-list" is the <ol> element containing all applications
+    const applicationsList = document.querySelector(".applications-list");
+
+    // This line selects all elements with the "application" class and stores them in the empty array
+    originalApplicationsOrder = Array.from(applicationsList.querySelectorAll(".application"));
+
+    // This line runs the sort function once the page loads so the applications list is displayed correctly from the start
+    sortFeature();
 });
 
-// Attach listeners
-document.getElementById("time-sort").addEventListener("change", handleSort);
-document.getElementById("location-sort").addEventListener("change", handleSort);
-document.getElementById("applied-sort").addEventListener("change", handleSort);
-document.getElementById("status-sort").addEventListener("change", handleSort);
+// This group of lines attaches event listeners to each of the <select> elements
+// It means the handleSort function will run any time any of the <select> elements change
+document.getElementById("time-sort").addEventListener("change", sortFeature);
+document.getElementById("location-sort").addEventListener("change", sortFeature);
+document.getElementById("applied-sort").addEventListener("change", sortFeature);
+document.getElementById("status-sort").addEventListener("change", sortFeature);
 
-function handleSort() {
+// The function that sorts applications
+function sortFeature() {
+
+    // This group of lines reads the current value of each <select> element and then stores it in a constant variable
+    // Necessary so the sortFeature function knows what logic to apply for each <select>
     const time = document.getElementById("time-sort").value;
     const location = document.getElementById("location-sort").value;
     const applied = document.getElementById("applied-sort").value;
     const status = document.getElementById("status-sort").value;
+    
+    // This constant variable represents the element with the class "applications-list"
+    // It has to be repeated since the first instance is outside the sortFeature function scope
+    const applicationsList = document.querySelector(".applications-list");
 
-    const list = document.querySelector(".applications-list");
+    // This variable creates a fresh copy of the original applications list
+    let allApplications = [...originalApplicationsOrder];
 
-    // Start with original order
-    let items = [...originalOrder];
+    // This constant variable creates an arrow function and stores its results in a new array called filtered
+    // The filtered array stores all the results which return true in the following code
+    const filtered = allApplications.filter(application => {
 
-    // 1. FILTER
-    const filtered = items.filter(item => {
-        // LOCATION
-        if (location && !item.querySelector(".location." + location)) return false;
+        // This group of lines check whether an application contains the class matching the chosen option
+        // If an application returns false, it will be excluded from the results
+        // If an application retusn true, it will be included in the results
+        if (location && !application.querySelector(".location." + location)) return false;
 
-        // APPLICATION METHOD
-        if (applied && !item.querySelector("." + applied)) return false;
+        if (applied && !application.querySelector("." + applied)) return false;
 
-        // STATUS
-        if (status && !item.querySelector("." + status)) return false;
+        if (status && !application.querySelector("." + status)) return false;
 
         return true;
     });
 
-    // 2. SORT BY TIME (reverse or not)
+    // This line reverses the allApplications array if the "oldest" option is chosen
     if (time === "oldest") {
         filtered.reverse();
     }
 
-    // 3. CLEAR LIST FIRST
-    list.innerHTML = "";
+    // This line removes all applications from the HTML so an updated filtered list can be added
+    applicationsList.innerHTML = "";
 
-    // 4. INSERT FILTERED ITEMS
-    filtered.forEach(item => list.appendChild(item));
+    // This line adds back the newly sorted and filtered application list
+    // "application" is a parameter for the arrow function, representing the application being sorted through by forEach
+    filtered.forEach(application => applicationsList.appendChild(application));
 
-    // 5. RESET VISIBLE COUNT
+    // This line ensures only the first 10 results of the newly sorted list appear
     visibleApplications = 10;
 
-    // 6. SHOW FIRST 10 OF FILTERED LIST
+    // This line calls the showApplications function from the "see more" button feature
     showApplications();
 }
-
 
 // SEE MORE APPLICATIONS BUTTON FEATURE
 
