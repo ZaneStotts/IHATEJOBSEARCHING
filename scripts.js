@@ -23,6 +23,8 @@ navLinks.forEach(link => {
     });
 });
 
+
+
 // DISAPPEAR HEADER ON SCROLL FEATURE
 
 // This variable represents the user's initial scroll position
@@ -59,6 +61,8 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll;
 });
 
+
+
 // CLICK OUTSIDE HEADER TO CLOSE FEATURE
 
 // This event listener listens for a click anywhere in the screen
@@ -76,6 +80,8 @@ document.addEventListener("click", (event) => {
   // This line tells header to close by removing "menu-open" class if a click occurs anywhere outside the header
   header.classList.remove("menu-open");
 });
+
+
 
 // DARK MODE FEATURE
 
@@ -106,6 +112,8 @@ darkModeButton.addEventListener("click", () => {
     // This line asks if isDark is true ("dark") or false ("light") and stores the answer in "colorKey"
     localStorage.setItem("colorKey", isDark ? "dark" : "light");
 });
+
+
 
 // WELCOME PAGE NUMBER COUNTER FEATURE
 
@@ -170,6 +178,8 @@ setTimeout(() => {
     offerNumber.style.opacity = "1";
     countAnimation(offerNumber, 1, 50);
 }, 5000);
+
+
 
 // SORT APPLICATIONS FEATURE
 
@@ -252,36 +262,48 @@ function sortFeature() {
     showApplications();
 }
 
+
+
 // SEE MORE APPLICATIONS BUTTON FEATURE
 
-// Instead of a static NodeList, make this a function
+// This function returns all elements with "application" class so the list can be updated if sorted later
 function getApplications() {
     return document.querySelectorAll(".applications-list > .application");
 }
 
-// "See more" button
+// This constant variable represents the "see more" button
 const button = document.querySelector(".button-container button");
 
-// Start with 10 visible applications
+// This variable allows only the first 10 applications to be shown
 let visibleApplications = 10;
 
-// Show the first set on page load
+// Calls the function to ensure website loads with correct number of visible applications
 showApplications();
 
-// Reveal 10 more when button is clicked
+// This group of lines adds an event listener to the "see more" button
+// So each time the button is clicked, a new set of applications will appear
 button.addEventListener("click", () => {
     visibleApplications += 10;
     showApplications();
 });
 
-// Show/hide applications based on visibleApplications
+// This function gets the current list of applications, decides which ones should be visible, then hides the rest
 function showApplications() {
-    const applications = getApplications(); // always fresh list
 
-    applications.forEach((application, index) => {
+    // Calls the getApplications function to get the current number of applications which should be shown and stores it inside a constant variable
+    const currentApplications = getApplications();
+
+    // These lines loop through each application to decide which ones should be seen
+    // "application" represents the actual HTML element
+    // "index" represents the numeric position of the application element
+    currentApplications.forEach((application, index) => {
+
+        // Ternary operator telling the page to only display applications if the index is less than the value of visibleApplications
         application.style.display = index < visibleApplications ? "block" : "none";
     });
 
-    // Hide button if all items are visible
-    button.style.visibility = applications.length > visibleApplications ? "visible" : "hidden";
+    // Ternary operator telling the page to only show the "see more" button if there are more applications beyond the visible ones
+    // If the length of the value of currentApplications is greater than the value of visibleApplications, continue displaying the button
+    // If currentApplications is less than visibleApplications, hide the button since there are no more results to show
+    button.style.visibility = currentApplications.length > visibleApplications ? "visible" : "hidden";
 }
