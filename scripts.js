@@ -181,6 +181,125 @@ setTimeout(() => {
 
 
 
+// MOST FREQUENT DATE FEATURE
+
+// Function converts ISO (YYYY-MM-DD) string to local Date object
+// By default, JavaScript interprets ISO strings as UTC and shift the date back by a day, making this function necessary
+function parseLocalDate(isoString) {
+
+    // This line splits each ISO string into an array by splitting between each dash
+    // Then turning the string into Number data type
+    // Constant variable deconstructs the array so year, month, and day have their own values
+    const [year, month, day] = isoString.split("-").map(Number);
+
+    // Return new Date object in local time zone
+    // Subtract 1 from month since JavaScript Date constructor has 0 based months
+    return new Date(year, month - 1, day);
+}
+
+// Function to collect all date data
+function getAllDates() {
+
+    // This constant variable represents all elements with "application" class
+    // "..." is used to spread the application elements in an array and stores it inside the const
+    const applicationElements = [...document.querySelectorAll(".application")];
+
+    // This line returns date-data value for each application element and stores them as strings in an array
+    return applicationElements.map(applicationElements => applicationElements.dataset.date);
+}
+
+// Function with a parameter for an array of date values stored as strings
+function countDateFrequencies(dateValues) {
+
+    // This constant variable creates a new Map
+    const map = new Map();
+
+    // Loop through every date string in the dateValues array
+    dateValues.forEach(value => {
+
+        // Updates the number of times a date value appears in the Map
+        map.set(value, (map.get(value) || 0) + 1);
+    });
+
+    // Return the updated Map
+    return map;
+}
+
+// Function to find the most frequent date with parameter for a Map, which has key-value pairs
+// The key is the date string
+// This value is the number of times the date occurs
+function findMostFrequent(map) {
+
+    // This variable will eventually store the date string with highest frequency
+    // Begins null because nothing has been examined yet
+    let maxDate = null;
+
+    // This variable will eventually store the highest count so far
+    // Begins at 0 because nothing has been examined yet
+    let maxCount = 0;
+
+    // Loops through all Map entries and puts them in pairs of "[date string, count]"
+    for (const [date, count] of map.entries()) {
+
+        // Checks if the current date (count) is greater than the highest count (maxCount) looped through so far
+        if (count > maxCount) {
+            maxDate = date;
+            maxCount = count;
+        }
+    }
+
+    // Returns an object with the most frequent date (maxDate) and how often it appeared (maxCount)
+    return { date: maxDate, count: maxCount };
+}
+
+// Function with a parameter for an ISO string (YYYY-MM-DD) and turns it to a newly formatted date string (Month Day, Year)
+function formatDate(isoString) {
+
+    // Calls the previous parseLocalDate function in order to get the correct date and stores it inside a constant variable
+    const date = parseLocalDate(isoString);
+
+    // Converts Date object to new format and returns it
+    return date.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+}
+
+// Function to perform main goal of the feature and display the date with highest application frequency
+function showMostFrequentDate() {
+
+    // Calls previous getAllDates function and stores the resulting array in a constant variable
+    const dates = getAllDates();
+
+    // Passes the array of date strings (dates) into countDateFrequencies function and then stores the result in a constant variable
+    const frequency = countDateFrequencies(dates);
+
+    // Calls findMostFrequent function and stores the resulting object in a constant variable
+    const result = findMostFrequent(frequency);
+
+    // This constant variable represents where the most frequent date will be displayed in the HTML
+    const output = document.getElementById('most-frequent-date');
+
+    // If statement used to skip display step in case the output element is not found
+    if (output) {
+
+        // Creates visible text in the output element
+        output.textContent =
+
+        // Template literal displaying the final results of the function
+        `${formatDate(result.date)} (${result.count} times)`;
+    }
+
+    // Returns the final date object if ever needed to be used for other purposes
+    return result;
+}
+
+// Call the function to actually run it
+showMostFrequentDate();
+
+
+
 // SORT APPLICATIONS FEATURE
 
 // This variable creates an empty array which is used to store <li> elements in original DOM order
