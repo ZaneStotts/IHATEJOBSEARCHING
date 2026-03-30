@@ -420,6 +420,18 @@ Data section styles
     width: fit-content;
 }
 
+.date-data-container {
+    margin: auto;
+    max-width: 500px;
+}
+
+#most-frequent-date {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 /*
 Data section media queries
 */

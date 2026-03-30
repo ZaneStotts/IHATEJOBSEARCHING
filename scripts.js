@@ -279,16 +279,47 @@ function showMostFrequentDate() {
     const result = findMostFrequent(frequency);
 
     // This constant variable represents where the most frequent date will be displayed in the HTML
-    const output = document.getElementById('most-frequent-date');
+    const output = document.getElementById("most-frequent-date");
 
     // If statement used to skip display step in case the output element is not found
     if (output) {
 
-        // Creates visible text in the output element
-        output.textContent =
+        // Clears previous content from the element where the output is displayed
+        // Important in case the date were to change in the future
+        output.innerHTML = "";
 
-        // Template literal displaying the final results of the function
-        `${formatDate(result.date)} (${result.count} times)`;
+        // Calls formatDate function and produces the new date string format ("November 27, 2025") and stores it inside a constant variable
+        const formatted = formatDate(result.date);
+
+        // Splits the date string at each space and stores each word in a new variable
+        const [month, dayWithComma, year] = formatted.split(" ");
+
+        // Removes comma and stores it inside a new constant variable
+        const day = dayWithComma.replace(",", "");
+
+        // This group of lines creates 
+        const monthElement = document.createElement("span");
+        const dayElement = document.createElement("span");
+        const yearElement = document.createElement("span");
+        const countElement = document.createElement("span");
+
+        // 🔥 NEW: Add text content
+        monthElement.textContent = month;
+        dayElement.textContent = day;
+        yearElement.textContent = year;
+        countElement.textContent = `${result.count} jobs`;
+
+        // 🔥 NEW: Add classes for styling
+        monthElement.classList.add("mf-month");
+        dayElement.classList.add("mf-day");
+        yearElement.classList.add("mf-year");
+        countElement.classList.add("mf-count");
+
+        // 🔥 NEW: Append to container
+        output.appendChild(monthElement);
+        output.appendChild(dayElement);
+        output.appendChild(yearElement);
+        output.appendChild(countElement);
     }
 
     // Returns the final date object if ever needed to be used for other purposes
