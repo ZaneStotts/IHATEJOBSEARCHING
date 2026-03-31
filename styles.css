@@ -413,7 +413,7 @@ Data section styles
     color: var(--text-color);
     font-family: Courier New, Monospace;
     font-size: 2.5rem;
-    margin: 30px auto 30px auto;
+    margin: 30px auto 45px auto;
     padding: 0 10px 0 10px;
     text-align: center;
     text-transform: lowercase;
@@ -422,14 +422,16 @@ Data section styles
 
 .date-data-container {
     margin: auto;
-    max-width: 500px;
+    max-width: 300px;
 }
 
-#most-frequent-date {
+.most-frequent-date {
+    border: 1px solid var(--text-color);
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 1.2rem;
     font-weight: bold;
+    padding: 10px 10px 10px 10px;
 }
 
 /*
@@ -460,7 +462,7 @@ Sort feature styles
 
 .sort-container {
     margin: auto;
-    max-width: 250px;
+    max-width: 300px;
 }
 
 .sort-container form {
@@ -490,7 +492,6 @@ Sort feature styles
     font-weight: bold;
     padding: 5px 0 5px 0;
     text-align: center;
-    text-transform: lowercase;
 }
 
 .sort-container form select:focus {

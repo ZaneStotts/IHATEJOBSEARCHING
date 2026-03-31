@@ -279,7 +279,7 @@ function showMostFrequentDate() {
     const result = findMostFrequent(frequency);
 
     // This constant variable represents where the most frequent date will be displayed in the HTML
-    const output = document.getElementById("most-frequent-date");
+    const output = document.querySelector(".most-frequent-date");
 
     // If statement used to skip display step in case the output element is not found
     if (output) {
@@ -297,25 +297,25 @@ function showMostFrequentDate() {
         // Removes comma and stores it inside a new constant variable
         const day = dayWithComma.replace(",", "");
 
-        // This group of lines creates 
+        // This group of lines creates four <span> elements and stores them in constant variables
         const monthElement = document.createElement("span");
         const dayElement = document.createElement("span");
         const yearElement = document.createElement("span");
         const countElement = document.createElement("span");
 
-        // 🔥 NEW: Add text content
+        // This group of lines fills each <spam> with the correct information
         monthElement.textContent = month;
         dayElement.textContent = day;
         yearElement.textContent = year;
         countElement.textContent = `${result.count} jobs`;
 
-        // 🔥 NEW: Add classes for styling
-        monthElement.classList.add("mf-month");
-        dayElement.classList.add("mf-day");
-        yearElement.classList.add("mf-year");
-        countElement.classList.add("mf-count");
+        // This group of lines adds CSS classes to each of the <span> elements so they can be styled individually
+        monthElement.classList.add("most-frequent-month");
+        dayElement.classList.add("most-frequent-day");
+        yearElement.classList.add("most-frequent-year");
+        countElement.classList.add("most-frequent-count");
 
-        // 🔥 NEW: Append to container
+        // This group of lines adds each <span> to the .most-frequent-date container
         output.appendChild(monthElement);
         output.appendChild(dayElement);
         output.appendChild(yearElement);
