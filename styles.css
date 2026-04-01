@@ -425,13 +425,53 @@ Data section styles
     max-width: 300px;
 }
 
-.most-frequent-date {
+.most-frequent-date-data {
     border: 1px solid var(--text-color);
+    padding: 10px 10px 10px 10px;
+}
+
+.most-frequent-date-data p {
     color: var(--text-color);
     font-family: Consolas, Monospace;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
-    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+.most-frequent-date {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.most-frequent-month {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 15px 0 0 0;
+}
+
+.most-frequent-day {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.most-frequent-year {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0 0 15px 0;
+}
+
+.most-frequent-count {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 /*

@@ -303,11 +303,11 @@ function showMostFrequentDate() {
         const yearElement = document.createElement("span");
         const countElement = document.createElement("span");
 
-        // This group of lines fills each <spam> with the correct information
+        // This group of lines fills each <span> with the correct information
         monthElement.textContent = month;
         dayElement.textContent = day;
         yearElement.textContent = year;
-        countElement.textContent = `${result.count} jobs`;
+        countElement.textContent = `${result.count} applications`;
 
         // This group of lines adds CSS classes to each of the <span> elements so they can be styled individually
         monthElement.classList.add("most-frequent-month");
