@@ -181,7 +181,7 @@ setTimeout(() => {
 
 
 
-// MOST FREQUENT DATE FEATURE
+// MOST FREQUENT DATE & MONTH FEATURE
 
 // Function converts ISO (YYYY-MM-DD) string to local Date object
 // By default, JavaScript interprets ISO strings as UTC and shift the date back by a day, making this function necessary
@@ -206,6 +206,13 @@ function getAllDates() {
 
     // This line returns date-data value for each application element and stores them as strings in an array
     return applicationElements.map(applicationElements => applicationElements.dataset.date);
+}
+
+// Function to extract just the month from a full date string
+function extractMonth(isoString) {
+
+    // This line slices the day part off the end of the date string, so only month and year return
+    return isoString.slice(0, 7);
 }
 
 // Function with a parameter for an array of date values stored as strings
@@ -266,6 +273,20 @@ function formatDate(isoString) {
     });
 }
 
+// Function to format a month string (YYYY-MM) into a newly formatted month string ("Month Year")
+function formatMonth(isoMonth) {
+
+    // This line separates month and year from date string, turns them to a number, then stores them in constant variables
+    const [year, month] = isoMonth.split("-").map(Number);
+
+    // Converts Date object to new format ("Month Year") and returns the result
+    // Subtract 1 from month since JavaScript month index begins at 0
+    return new Date(year, month - 1).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long"
+    });
+}
+
 // Function to perform main goal of the feature and display the date with highest application frequency
 function showMostFrequentDate() {
 
@@ -297,7 +318,7 @@ function showMostFrequentDate() {
         // Removes comma and stores it inside a new constant variable
         const day = dayWithComma.replace(",", "");
 
-        // This group of lines creates four <span> elements and stores them in constant variables
+        // This group of lines creates 4 <span> elements and stores them in constant variables
         const monthElement = document.createElement("span");
         const dayElement = document.createElement("span");
         const yearElement = document.createElement("span");
@@ -326,8 +347,59 @@ function showMostFrequentDate() {
     return result;
 }
 
-// Call the function to actually run it
+// Function to find and display the month with most job applications
+function showMostFrequentMonth() {
+
+    // Calls previous getAllDates function and stores the resulting array in a constant variable
+    const dates = getAllDates();
+
+    // Convert each full date to only the month portion and stores the results in a constant variable
+    const months = dates.map(extractMonth);
+
+    // Calls previous countDateFrequencies function to count how frequent each month is and stores results in a constant variable
+    const frequency = countDateFrequencies(months);
+
+    // Calls findMostFrequent function and stores the resulting object in a constant variable
+    const result = findMostFrequent(frequency);
+
+    // This constant variable represents where the most frequent date will be displayed in the HTML
+    const output = document.querySelector(".most-frequent-month-data");
+
+    // If statement used to skip display step in case the output element is not found
+    if (output) {
+
+        // Clears previous content from the element where the output is displayed
+        // Important in case the date were to change in the future
+        output.innerHTML = "";
+
+        // Calls formatDate function and produces the new date string format ("August 2025") and stores it inside a constant variable
+        const formatted = formatMonth(result.date);
+
+        // This group of lines creates 2 <span> elements and stores them in constant variables
+        const monthElement = document.createElement("span");
+        const countElement = document.createElement("span");
+
+        // This group of lines fills each <span> with the correct information
+        monthElement.textContent = formatted;
+        countElement.textContent = `${result.count} applications`;
+
+        // This group of lines adds CSS classes to each of the <span> elements so they can be styled individually
+        monthElement.classList.add("most-frequent-month-label");
+        countElement.classList.add("most-frequent-month-count");
+
+        // This group of lines adds each <span> to the .most-frequent-month container
+        output.appendChild(monthElement);
+        output.appendChild(countElement);
+    }
+
+    // Returns the final date object if ever needed to be used for other purposes
+    return result;
+}
+
+// Call the functions to actually run them
 showMostFrequentDate();
+
+showMostFrequentMonth();
 
 
 
