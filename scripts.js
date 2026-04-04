@@ -331,10 +331,10 @@ function showMostFrequentDate() {
         countElement.textContent = `${result.count} applications`;
 
         // This group of lines adds CSS classes to each of the <span> elements so they can be styled individually
-        monthElement.classList.add("most-frequent-month");
-        dayElement.classList.add("most-frequent-day");
-        yearElement.classList.add("most-frequent-year");
-        countElement.classList.add("most-frequent-count");
+        monthElement.classList.add("most-frequent-date-month");
+        dayElement.classList.add("most-frequent-date-day");
+        yearElement.classList.add("most-frequent-date-year");
+        countElement.classList.add("most-frequent-date-count");
 
         // This group of lines adds each <span> to the .most-frequent-date container
         output.appendChild(monthElement);
@@ -363,7 +363,7 @@ function showMostFrequentMonth() {
     const result = findMostFrequent(frequency);
 
     // This constant variable represents where the most frequent date will be displayed in the HTML
-    const output = document.querySelector(".most-frequent-month-data");
+    const output = document.querySelector(".most-frequent-month");
 
     // If statement used to skip display step in case the output element is not found
     if (output) {
@@ -375,20 +375,27 @@ function showMostFrequentMonth() {
         // Calls formatDate function and produces the new date string format ("August 2025") and stores it inside a constant variable
         const formatted = formatMonth(result.date);
 
+        // Splits the month name and year apart so they can be styled separately
+        const [monthName, year] = formatted.split(" ");
+
         // This group of lines creates 2 <span> elements and stores them in constant variables
         const monthElement = document.createElement("span");
+        const yearElement = document.createElement("span");
         const countElement = document.createElement("span");
 
         // This group of lines fills each <span> with the correct information
-        monthElement.textContent = formatted;
+        monthElement.textContent = monthName;
+        yearElement.textContent = year;
         countElement.textContent = `${result.count} applications`;
 
         // This group of lines adds CSS classes to each of the <span> elements so they can be styled individually
-        monthElement.classList.add("most-frequent-month-label");
+        monthElement.classList.add("most-frequent-month-name");
+        yearElement.classList.add("most-frequent-month-year");
         countElement.classList.add("most-frequent-month-count");
 
         // This group of lines adds each <span> to the .most-frequent-month container
         output.appendChild(monthElement);
+        output.appendChild(yearElement);
         output.appendChild(countElement);
     }
 

@@ -444,7 +444,7 @@ Data section styles
     text-align: center;
 }
 
-.most-frequent-month {
+.most-frequent-date-month {
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 2.5rem;
@@ -452,14 +452,14 @@ Data section styles
     padding: 15px 0 0 0;
 }
 
-.most-frequent-day {
+.most-frequent-date-day {
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 5rem;
     font-weight: bold;
 }
 
-.most-frequent-year {
+.most-frequent-date-year {
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 3rem;
@@ -467,11 +467,54 @@ Data section styles
     padding: 0 0 15px 0;
 }
 
-.most-frequent-count {
+.most-frequent-date-count {
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 1rem;
     font-weight: bold;
+}
+
+.most-frequent-month-data {
+    border: 1px solid var(--text-color);
+    margin: 30px 0 0 0;
+    padding: 10px 10px 10px 10px;
+}
+
+.most-frequent-month-data p {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.most-frequent-month {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.most-frequent-month-name {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 15px 0 15px 0;
+}
+
+.most-frequent-month-year {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.most-frequent-month-count {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 15px 0 0 0;
 }
 
 /*
@@ -488,11 +531,47 @@ Data section media queries
     .data-section h2 {
         font-size: 1.5rem;
     }
+
+    .most-frequent-date-month,
+    .most-frequent-month-name {
+        font-size: 1.9rem;
+    }
+
+    .most-frequent-month-name {
+        padding: 15px 0 10px 0;
+    }
+
+    .most-frequent-date-day {
+        font-size: 3.5rem;
+    }
+
+    .most-frequent-date-year,
+    .most-frequent-month-year {
+        font-size: 2.2rem;
+    }
 }
 
 @media screen and (max-width: 250px) {
     .data-section h2 {
         font-size: 1.2rem;
+    }
+
+    .most-frequent-date-month,
+    .most-frequent-month-name {
+        font-size: 1.3rem;
+    }
+
+    .most-frequent-month-name {
+        padding: 15px 0 0 0;
+    }
+
+    .most-frequent-date-day {
+        font-size: 2.2rem;
+    }
+
+    .most-frequent-date-year,
+    .most-frequent-month-year {
+        font-size: 1.5rem;
     }
 }
 
