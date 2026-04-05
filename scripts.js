@@ -412,6 +412,77 @@ showMostFrequentMonth();
 
 // APPLICATION METHOD BAR CHART FEATURE
 
+const methodLabels = {
+    companyWebsite: "Company website",
+    dice: "Dice",
+    indeed: "Indeed",
+    inPerson: "In person",
+    linkedin: "LinkedIn",
+    ziprecruiter: "ZipRecruiter"
+};
+
+function getApplicationMethodStats() {
+
+    const apps = document.querySelectorAll(".application");
+
+    const stats = {
+        companyWebsite: 0,
+        dice: 0,
+        indeed: 0,
+        inPerson: 0,
+        linkedin: 0,
+        ziprecruiter: 0
+    };
+
+    apps.forEach(app => {
+        if (app.querySelector(".company-website")) stats.companyWebsite++;
+        if (app.querySelector(".dice")) stats.dice++;
+        if (app.querySelector(".indeed")) stats.indeed++;
+        if (app.querySelector(".in-person")) stats.inPerson++;
+        if (app.querySelector(".linkedin")) stats.linkedin++;
+        if (app.querySelector(".ziprecruiter")) stats.ziprecruiter++;
+    });
+
+    return stats;
+}
+
+function renderApplicationMethodBarChart(stats) {
+    const container = document.querySelector(".application-method-bar-chart");
+    container.innerHTML = '';
+
+    const values = Object.values(stats);
+    const total = values.reduce((a, b) => a + b, 0);
+    const max = Math.max(...values);
+
+    Object.entries(stats).forEach(([method, count]) => {
+
+        const percent = total === 0 ? 0 : (count / total) * 100;
+
+        const column = document.createElement("div");
+        column.className = "application-method-column";
+
+        const bar = document.createElement("div");
+        bar.className = "application-method-bar";
+        bar.style.width = `${(count / max) * 100}%`;
+
+        const percentLabel = document.createElement("div");
+        percentLabel.className = 'percent-label';
+
+        percentLabel.textContent = `${methodLabels[method]} — ${percent.toFixed(1)}%`;
+
+
+        column.appendChild(bar);
+        column.appendChild(percentLabel);
+        
+        container.appendChild(column);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const stats = getApplicationMethodStats();
+    renderApplicationMethodBarChart(stats);
+});
+
 
 
 // SORT APPLICATIONS FEATURE
