@@ -422,8 +422,12 @@ Data section styles
 
 .date-data-container {
     margin: auto;
-    max-width: 300px;
+    max-width: 400px;
 }
+
+/*
+Most frequent date and month feature styles
+*/
 
 .most-frequent-date-data {
     border: 1px solid var(--text-color);
@@ -518,6 +522,10 @@ Data section styles
 }
 
 /*
+Application method bar chart styles
+*/
+
+/*
 Data section media queries
 */
 
@@ -531,6 +539,10 @@ Data section media queries
     .data-section h2 {
         font-size: 1.5rem;
     }
+
+    /*
+    Most frequent date and month feature media queries
+    */
 
     .most-frequent-date-month,
     .most-frequent-month-name {
@@ -555,6 +567,10 @@ Data section media queries
     .data-section h2 {
         font-size: 1.2rem;
     }
+
+    /*
+    Most frequent date and month feature styles
+    */
 
     .most-frequent-date-month,
     .most-frequent-month-name {
