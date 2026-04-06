@@ -412,6 +412,7 @@ showMostFrequentMonth();
 
 // APPLICATION METHOD BAR CHART FEATURE
 
+// This group of lines creates labels for application methods so when information is displayed, the names are more easily reabable
 const methodLabels = {
     companyWebsite: "Company website",
     dice: "Dice",
@@ -421,10 +422,13 @@ const methodLabels = {
     ziprecruiter: "ZipRecruiter"
 };
 
+// A function that scans through applications list and returns an object with counts for each application method
 function getApplicationMethodStats() {
 
-    const apps = document.querySelectorAll(".application");
+    // This line grabs all elements with ".application" class and stores them in a constant variable
+    const applications = document.querySelectorAll(".application");
 
+    // This group of lines initializes all application methods so they can then be counted, starting from 0
     const stats = {
         companyWebsite: 0,
         dice: 0,
@@ -434,23 +438,34 @@ function getApplicationMethodStats() {
         ziprecruiter: 0
     };
 
-    apps.forEach(app => {
-        if (app.querySelector(".company-website")) stats.companyWebsite++;
-        if (app.querySelector(".dice")) stats.dice++;
-        if (app.querySelector(".indeed")) stats.indeed++;
-        if (app.querySelector(".in-person")) stats.inPerson++;
-        if (app.querySelector(".linkedin")) stats.linkedin++;
-        if (app.querySelector(".ziprecruiter")) stats.ziprecruiter++;
+    // This group of lines loops through every application element
+    // "application" represents the current application being looped through
+    // If the loop detects a child element with any of the following classes, then its respective stats is increased by 1
+    applications.forEach(application => {
+        if (application.querySelector(".company-website")) stats.companyWebsite++;
+        if (application.querySelector(".dice")) stats.dice++;
+        if (application.querySelector(".indeed")) stats.indeed++;
+        if (application.querySelector(".in-person")) stats.inPerson++;
+        if (application.querySelector(".linkedin")) stats.linkedin++;
+        if (application.querySelector(".ziprecruiter")) stats.ziprecruiter++;
     });
 
+    // Returns stats object
     return stats;
 }
 
+// Function which takes stats from the previous function and turns it to a bar chart
 function renderApplicationMethodBarChart(stats) {
-    const container = document.querySelector(".application-method-bar-chart");
-    container.innerHTML = '';
 
+    // This constant variable locates where in the HTML the bar chart will be rendered
+    const barChartContainer = document.querySelector(".application-method-bar-chart");
+
+    // This line clears the bar chart container before drawing new bars, which prevents duplicate charts if the function runs more than once
+    barChartContainer.innerHTML = "";
+
+    // Takes the numeric counts from stats object and puts them in an array and stores it in a constant variable
     const values = Object.values(stats);
+    
     const total = values.reduce((a, b) => a + b, 0);
     const max = Math.max(...values);
 
@@ -466,7 +481,7 @@ function renderApplicationMethodBarChart(stats) {
         bar.style.width = `${(count / max) * 100}%`;
 
         const percentLabel = document.createElement("div");
-        percentLabel.className = 'percent-label';
+        percentLabel.className = "percent-label";
 
         percentLabel.textContent = `${methodLabels[method]} — ${percent.toFixed(1)}%`;
 
@@ -474,7 +489,7 @@ function renderApplicationMethodBarChart(stats) {
         column.appendChild(bar);
         column.appendChild(percentLabel);
         
-        container.appendChild(column);
+        barChartContainer.appendChild(column);
     });
 }
 
