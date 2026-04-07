@@ -466,35 +466,56 @@ function renderApplicationMethodBarChart(stats) {
     // Takes the numeric counts from stats object and puts them in an array and stores it in a constant variable
     const values = Object.values(stats);
     
+    // This line sums together all the numbers in the "values" array
+    // "total" is constant variable representing the total number of applications across all application methods
     const total = values.reduce((a, b) => a + b, 0);
+
+    // This constant variable represents the largest count (currently LinkedIn)
+    // Necessary so the bars in the chart can be scaled proportionally
     const max = Math.max(...values);
 
+    // Loops through each application method and returns 2 results
+    // "method" represents the application method and "count" represents the number of applications for that method
     Object.entries(stats).forEach(([method, count]) => {
 
+        // This line calculates percentages using a ternary operator
+        // If total is 0, then percent will be 0 too in order to avoid any division by 0
+        // If total is more than 0, it will calculate the percentage
         const percent = total === 0 ? 0 : (count / total) * 100;
 
+        // This group of lines creates a <div> containing the bar and label
         const column = document.createElement("div");
         column.className = "application-method-column";
 
+        // This group of lines creates the bars and styles them in proportion to the highest (max) count
         const bar = document.createElement("div");
         bar.className = "application-method-bar";
         bar.style.width = `${(count / max) * 100}%`;
 
+        // This group of lines creates a <div> to display percent
         const percentLabel = document.createElement("div");
         percentLabel.className = "percent-label";
 
+        // Gets the readable application method name from methodLabels and displays it in percentLabel
+        // Also rounds percentages to 1 decimal place
         percentLabel.textContent = `${methodLabels[method]} — ${percent.toFixed(1)}%`;
 
-
+        // This group of lines adds the bar and percent label to the column container so they all appear together
         column.appendChild(bar);
         column.appendChild(percentLabel);
         
+        // This line adds the complete column to the main bar chart container
         barChartContainer.appendChild(column);
     });
 }
 
+// This line tells the script to wait until HTML is loaded before initializing functions
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Calls the getApplicationMethodStats function from earlier which returns an object with each application method and its count, then stores the results in a constant variable
     const stats = getApplicationMethodStats();
+
+    // Pass the results of the previous function to the function which actually turns it to a bar chart
     renderApplicationMethodBarChart(stats);
 });
 
