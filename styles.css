@@ -420,18 +420,18 @@ Data section styles
     width: fit-content;
 }
 
-.date-data-container {
-    margin: auto;
-    max-width: 400px;
-}
-
 /*
 Most frequent date and month feature styles
 */
 
+.date-data-container {
+    margin: auto;
+    max-width: 600px;
+}
+
 .most-frequent-date-data {
-    border: 1px solid var(--text-color);
-    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid var(--text-color);
+    padding: 0 0 30px 0;
 }
 
 .most-frequent-date-data p {
@@ -449,7 +449,7 @@ Most frequent date and month feature styles
 }
 
 .most-frequent-date-month {
-    color: var(--text-color);
+    color: var(--accent-color);
     font-family: Consolas, Monospace;
     font-size: 2.5rem;
     font-weight: bold;
@@ -457,14 +457,14 @@ Most frequent date and month feature styles
 }
 
 .most-frequent-date-day {
-    color: var(--text-color);
+    color: var(--accent-color);
     font-family: Consolas, Monospace;
     font-size: 5rem;
     font-weight: bold;
 }
 
 .most-frequent-date-year {
-    color: var(--text-color);
+    color: var(--accent-color);
     font-family: Consolas, Monospace;
     font-size: 3rem;
     font-weight: bold;
@@ -479,9 +479,9 @@ Most frequent date and month feature styles
 }
 
 .most-frequent-month-data {
-    border: 1px solid var(--text-color);
-    margin: 30px 0 0 0;
-    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid var(--text-color);
+    margin: 30px 0 30px 0;
+    padding: 0 0 30px 0;
 }
 
 .most-frequent-month-data p {
@@ -499,7 +499,7 @@ Most frequent date and month feature styles
 }
 
 .most-frequent-month-name {
-    color: var(--text-color);
+    color: var(--accent-color);
     font-family: Consolas, Monospace;
     font-size: 3.5rem;
     font-weight: bold;
@@ -507,7 +507,7 @@ Most frequent date and month feature styles
 }
 
 .most-frequent-month-year {
-    color: var(--text-color);
+    color: var(--accent-color);
     font-family: Consolas, Monospace;
     font-size: 3rem;
     font-weight: bold;
@@ -525,10 +525,25 @@ Most frequent date and month feature styles
 Application method bar chart styles
 */
 
+.application-method-data-container {
+    border-bottom: 1px solid var(--text-color);
+    margin: auto;
+    max-width: 600px;
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+
+.application-method-data-container p {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0 0 30px 0;
+}
+
 .application-method-bar-chart {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .application-method-column {
@@ -547,6 +562,7 @@ Application method bar chart styles
     font-family: Consolas, Monospace;
     font-size: 1rem;
     font-weight: bold;
+    padding: 5px 0 10px 0;
 }
 
 /*
