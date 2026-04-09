@@ -521,6 +521,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// INTERVIEW PERCENTAGE FEATURE
+
+// Function that calculates and returns the percentage of applications with ".interviewed" class
+function getInterviewPercentage() {
+
+    // This line selects all elements with ".application" class and stores them in a constant variable
+    const applications = document.querySelectorAll(".application");
+
+    // This constant variable represents how many applications there are
+    const applicationsTotal = applications.length;
+
+    // This line initializes the counter to track how many "interviewed" applications are present
+    // Begins counting at zero
+    // Uses "let" variable since value will change
+    let interviewedCount = 0;
+
+    applications.forEach(application => {
+        if (application.querySelector(".interviewed")) {
+            interviewedCount++;
+        }
+    });
+
+    const percent = applicationsTotal === 0 ? 0 : (interviewedCount / applicationsTotal) * 100;
+    return percent.toFixed(1);
+}
+
+function renderInterviewPercentage() {
+    const percent = getInterviewPercentage();
+    const percentContainer = document.querySelector(".interview-percentage");
+
+    percentContainer.textContent = `${percent}% interviewed`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderInterviewPercentage();
+});
+
+
+
 // SORT APPLICATIONS FEATURE
 
 // This variable creates an empty array which is used to store <li> elements in original DOM order
