@@ -537,6 +537,7 @@ function getInterviewPercentage() {
     // Uses "let" variable since value will change
     let interviewedCount = 0;
 
+    //
     applications.forEach(application => {
         if (application.querySelector(".interviewed")) {
             interviewedCount++;
