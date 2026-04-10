@@ -537,25 +537,40 @@ function getInterviewPercentage() {
     // Uses "let" variable since value will change
     let interviewedCount = 0;
 
-    //
+    // This line loops through every ".application" element
     applications.forEach(application => {
+
+        // If the loop finds an element with ".interviewed" class, then it increases interviewedCount by 1
         if (application.querySelector(".interviewed")) {
             interviewedCount++;
         }
     });
 
+    // A ternary operator that calculates the percentage of interviewedCount
+    // It also handles division by 0 and will set the percentage to 0 if there are no ".interviewed" applications detected
     const percent = applicationsTotal === 0 ? 0 : (interviewedCount / applicationsTotal) * 100;
+
+    // Returns the percentage amount and rounds to 1 decimal point
     return percent.toFixed(1);
 }
 
+// This function displays percentage on website
 function renderInterviewPercentage() {
+
+    // This line calls the previous function and stores the result in a constant variable
     const percent = getInterviewPercentage();
+
+    // This line is a constant variable representing the HTML element where the percentage is displayed
     const percentContainer = document.querySelector(".interview-percentage");
 
-    percentContainer.textContent = `${percent}% interviewed`;
+    // Writes "percent" variable into "percentContainer" variable so the percentage can be seen on screen
+    percentContainer.textContent = `${percent}%`;
 }
 
+// This line waits until the HTML is loaded before running the function
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Calls renderInterviewPercentage function so it can display on website
     renderInterviewPercentage();
 });
 

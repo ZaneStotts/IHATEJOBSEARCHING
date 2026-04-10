@@ -566,6 +566,37 @@ Application method bar chart styles
 }
 
 /*
+Interviewed ratio feature styles
+*/
+
+.status-data-container {
+    margin: auto;
+    max-width: 600px;
+}
+
+.interview-percentage-data {
+    border-bottom: 1px solid var(--text-color);
+    padding: 30px 0 30px 0;
+}
+
+.interview-percentage-data p {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.interview-percentage {
+    color: var(--accent-color);
+    font-family: Consolas, Monospace;
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 15px 0 15px 0;
+    text-align: center;
+}
+
+/*
 Data section media queries
 */
 
@@ -601,6 +632,14 @@ Data section media queries
     .most-frequent-month-year {
         font-size: 2.2rem;
     }
+
+    /*
+    Interview percentage feature media queries
+    */
+
+    .interview-percentage {
+        font-size: 3.3rem;
+    }
 }
 
 @media screen and (max-width: 250px) {
@@ -628,6 +667,14 @@ Data section media queries
     .most-frequent-date-year,
     .most-frequent-month-year {
         font-size: 1.5rem;
+    }
+
+    /*
+    Interview percentage feature media queries
+    */
+
+    .interview-percentage {
+        font-size: 2rem;
     }
 }
 
@@ -665,7 +712,7 @@ Sort feature styles
     font-family: Consolas, Monospace;
     font-size: 1rem;
     font-weight: bold;
-    padding: 5px 0 5px 0;
+    padding: 5px 5px 5px 5px;
     text-align: center;
 }
 
