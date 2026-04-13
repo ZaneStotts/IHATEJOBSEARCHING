@@ -576,6 +576,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// OFFER PERCENTAGE FEATURE
+
+
+
+
 // SORT APPLICATIONS FEATURE
 
 // This variable creates an empty array which is used to store <li> elements in original DOM order

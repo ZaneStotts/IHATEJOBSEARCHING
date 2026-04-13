@@ -590,7 +590,7 @@ Interviewed ratio feature styles
 .interview-percentage {
     color: var(--accent-color);
     font-family: Consolas, Monospace;
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: bold;
     padding: 15px 0 15px 0;
     text-align: center;
