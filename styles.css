@@ -566,7 +566,7 @@ Application method bar chart styles
 }
 
 /*
-Interviewed ratio feature styles
+Interviewed and offer ratio feature styles
 */
 
 .status-data-container {
@@ -574,12 +574,14 @@ Interviewed ratio feature styles
     max-width: 600px;
 }
 
-.interview-percentage-data {
+.interview-percentage-data,
+.offer-percentage-data {
     border-bottom: 1px solid var(--text-color);
     padding: 30px 0 30px 0;
 }
 
-.interview-percentage-data p {
+.interview-percentage-data p,
+.offer-percentage-data p {
     color: var(--text-color);
     font-family: Consolas, Monospace;
     font-size: 1rem;
@@ -587,7 +589,8 @@ Interviewed ratio feature styles
     text-align: center;
 }
 
-.interview-percentage {
+.interview-percentage,
+.offer-percentage {
     color: var(--accent-color);
     font-family: Consolas, Monospace;
     font-size: 4.5rem;
@@ -634,10 +637,11 @@ Data section media queries
     }
 
     /*
-    Interview percentage feature media queries
+    Interview and offer percentage feature media queries
     */
 
-    .interview-percentage {
+    .interview-percentage,
+    .offer-percentage {
         font-size: 3.3rem;
     }
 }
@@ -670,10 +674,11 @@ Data section media queries
     }
 
     /*
-    Interview percentage feature media queries
+    Interview and offer percentage feature media queries
     */
 
-    .interview-percentage {
+    .interview-percentage,
+    .offer-percentage {
         font-size: 2rem;
     }
 }

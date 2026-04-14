@@ -578,6 +578,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // OFFER PERCENTAGE FEATURE
 
+function getOfferPercentage() {
+
+    // This line selects all elements with ".application" class and stores them in a constant variable
+    const applications = document.querySelectorAll(".application");
+
+    // This constant variable represents how many applications there are
+    const applicationsTotal = applications.length;
+
+    // This line initializes the counter to track how many applications with ".offer" are present
+    // Begins counting at zero
+    // Uses "let" variable since value will change
+    let offerCount = 0;
+
+    // This line loops through every ".application" element
+    applications.forEach(application => {
+
+        // If the loop finds an element with ".offer" class, then it increases offerCount by 1
+        if (application.querySelector(".offer")) {
+            offerCount++;
+        }
+    });
+
+    // A ternary operator that calculates the percentage of offerCount
+    // It also handles division by 0 and will set the percentage to 0 if there are no ".offer" applications detected
+    const percent = applicationsTotal === 0 ? 0 : (offerCount / applicationsTotal) * 100;
+
+    // Returns the percentage amount and rounds to 1 decimal point
+    return percent.toFixed(1);
+}
+
+// This function displays percentage on website
+function renderOfferPercentage() {
+
+    // This line calls the previous function and stores the result in a constant variable
+    const percent = getOfferPercentage();
+
+    // This line is a constant variable representing the HTML element where the percentage is displayed
+    const percentContainer = document.querySelector(".offer-percentage");
+
+    // Writes "percent" variable into "percentContainer" variable so the percentage can be seen on screen
+    percentContainer.textContent = `${percent}%`;
+}
+
+// This line waits until the HTML is loaded before running the function
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Calls renderOfferPercentage function so it can display on website
+    renderOfferPercentage();
+});
+
+
+
+// RESPONSE BAR CHART
 
 
 
