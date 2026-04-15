@@ -600,6 +600,38 @@ Interviewed and offer ratio feature styles
 }
 
 /*
+Response bar chart styles
+*/
+
+.response-bar-chart-container {
+    max-width: 600px;
+}
+
+.response-bar-chart {
+    display: flex;
+    flex-direction: column;
+}
+
+.response-bar-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.response-bar {
+    height: 30px;
+    background: var(--accent-color);
+}
+
+.response-bar-label {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 0 10px 0;
+}
+
+
+/*
 Data section media queries
 */
 

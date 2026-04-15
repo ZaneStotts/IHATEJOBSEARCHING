@@ -632,6 +632,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // RESPONSE BAR CHART
 
+function getResponseStats(applications) {
+    let noResponse = 0;
+    let other = 0;
+
+    applications.forEach(app => {
+        const statusItem = app.querySelector(".no-response");
+
+        if (statusItem) {
+            noResponse++;
+        } else {
+            other++;
+        }
+    });
+
+    return { noResponse, other };
+}
+
+function renderResponseBarChart(stats, container) {
+    container.innerHTML = "";
+
+    const total = stats.noResponse + stats.other;
+    const max = Math.max(stats.noResponse, stats.other);
+
+    const labels = {
+        noResponse: "No response",
+        other: "Other statuses"
+    };
+
+    Object.entries(stats).forEach(([key, value]) => {
+        const percent = total === 0 ? 0 : (value / total) * 100;
+
+        const row = document.createElement("div");
+        row.className = "response-bar-row";
+
+        const bar = document.createElement("div");
+        bar.className = "response-bar";
+        bar.style.width = `${(value / max) * 100}%`;
+
+        const label = document.createElement("div");
+        label.className = "response-bar-label";
+        label.textContent = `${labels[key]} — ${percent.toFixed(1)}%`;
+
+        row.appendChild(bar);
+        row.appendChild(label);
+
+        container.appendChild(row);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const applications = document.querySelectorAll(".application");
+    const stats = getResponseStats(applications);
+
+    const container = document.querySelector(".response-bar-chart");
+    renderResponseBarChart(stats, container);
+});
+
+
+
 
 
 // SORT APPLICATIONS FEATURE
