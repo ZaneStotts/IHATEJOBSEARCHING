@@ -632,13 +632,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // RESPONSE BAR CHART
 
+// A function which checks how many applications have the "no-response" class and how many applications do not
+// The parameter "applications" is a list of all elements with the ".application" class (defined further down)
 function getResponseStats(applications) {
+
+    // These variables initialize counters
+    // They start at 0 and use "let" since their value will change
     let noResponse = 0;
     let other = 0;
 
-    applications.forEach(app => {
-        const statusItem = app.querySelector(".no-response");
+    // Loops through every ".application" element
+    // In this case, "application" represents an individual ".application" element
+    applications.forEach(application => {
 
+        // This line searches inside of each application for the ".no-response" class
+        const statusItem = application.querySelector(".no-response");
+
+        // If statusItem exists (".no-response" class), then the noResponse variable will be increased by 1
+        // If statusItem is not found, the other variable will be increased by 1
         if (statusItem) {
             noResponse++;
         } else {
@@ -646,6 +657,7 @@ function getResponseStats(applications) {
         }
     });
 
+    // This line returns an object containing the total counts for each counter variables
     return { noResponse, other };
 }
 
@@ -657,10 +669,12 @@ function renderResponseBarChart(stats, container) {
 
     const labels = {
         noResponse: "No response",
-        other: "Other statuses"
+        other: "Company response"
     };
 
-    Object.entries(stats).forEach(([key, value]) => {
+    ["other", "noResponse"].forEach(key => {
+        const value = stats[key];
+
         const percent = total === 0 ? 0 : (value / total) * 100;
 
         const row = document.createElement("div");
@@ -688,7 +702,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".response-bar-chart");
     renderResponseBarChart(stats, container);
 });
-
 
 
 

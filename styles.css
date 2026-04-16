@@ -607,6 +607,15 @@ Response bar chart styles
     max-width: 600px;
 }
 
+.response-bar-chart-container p {
+    color: var(--text-color);
+    font-family: Consolas, Monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 30px 0 30px 0;
+    text-align: center;
+}
+
 .response-bar-chart {
     display: flex;
     flex-direction: column;
@@ -629,7 +638,6 @@ Response bar chart styles
     font-weight: bold;
     padding: 5px 0 10px 0;
 }
-
 
 /*
 Data section media queries
