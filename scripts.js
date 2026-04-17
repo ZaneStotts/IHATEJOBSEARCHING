@@ -661,17 +661,27 @@ function getResponseStats(applications) {
     return { noResponse, other };
 }
 
+// Function which takes stats from the previous function and turns it to a visible bar chart
 function renderResponseBarChart(stats, container) {
+
+    // This line clears the bar chart container before drawing new bars, which prevents duplicate charts if the function runs more than once
     container.innerHTML = "";
 
+    // This line adds both counts together so pecentages can be calculated and stores the result in a constant variable
     const total = stats.noResponse + stats.other;
+
+    // This constant variable represents the largest count (currently "no-response")
+    // Necessary so the bars in the chart can be scaled proportionally
     const max = Math.max(stats.noResponse, stats.other);
 
+    // This group of lines defines what labels will be displayed under each bar
     const labels = {
         noResponse: "No response",
-        other: "Company response"
+        other: "Received response"
     };
 
+    // Makes an array and loops through it, "other" first and "noResponse" second
+    // "key" represents the current item from the array
     ["other", "noResponse"].forEach(key => {
         const value = stats[key];
 
@@ -702,7 +712,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".response-bar-chart");
     renderResponseBarChart(stats, container);
 });
-
 
 
 
