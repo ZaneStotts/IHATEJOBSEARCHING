@@ -677,39 +677,60 @@ function renderResponseBarChart(stats, container) {
     // This group of lines defines what labels will be displayed under each bar
     const labels = {
         noResponse: "No response",
-        other: "Received response"
+        other: "Responded"
     };
 
     // Makes an array and loops through it, "other" first and "noResponse" second
     // "key" represents the current item from the array
     ["other", "noResponse"].forEach(key => {
+
+        // This line stores the numeric value for either category in a constant variable
         const value = stats[key];
 
+        // This line calculates percentages using a ternary operator
+        // If total is 0, then percent will be 0 too in order to avoid any division by 0
+        // If total is more than 0, it will calculate the percentage
         const percent = total === 0 ? 0 : (value / total) * 100;
 
+        // This group of lines creates a <div> containing the bar and label
         const row = document.createElement("div");
         row.className = "response-bar-row";
 
+        // This group of lines creates the bars, gives them a class name, and styles them in proportion to the highest (max) count
         const bar = document.createElement("div");
         bar.className = "response-bar";
         bar.style.width = `${(value / max) * 100}%`;
 
+        // This group of lines creates a <div> to display percent
         const label = document.createElement("div");
         label.className = "response-bar-label";
+
+        // Gets the readable application method name from "labels" variable from earlier and displays it in the above "label" variable
+        // Also rounds percentages to 1 decimal place
         label.textContent = `${labels[key]} — ${percent.toFixed(1)}%`;
 
+        // This group of lines adds the bar and percent label to the column container so they all appear together
         row.appendChild(bar);
         row.appendChild(label);
 
+        // This line adds the complete column to the main bar chart container
         container.appendChild(row);
     });
 }
 
+// This line tells the script to wait until HTML is loaded before initializing functions
 document.addEventListener("DOMContentLoaded", () => {
+
+    // This constant variable represents all application elements
     const applications = document.querySelectorAll(".application");
+
+    // Calls the getResponseStats function from earlier which returns an object with each response category and its count, then stores the results in a constant variable
     const stats = getResponseStats(applications);
 
+    // This line decides in what element the chart will be displayed
     const container = document.querySelector(".response-bar-chart");
+
+    // Pass the results of the previous function to the function which actually turns it to a bar chart (renderResponseBarChart)
     renderResponseBarChart(stats, container);
 });
 
