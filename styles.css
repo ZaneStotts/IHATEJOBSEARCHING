@@ -224,21 +224,18 @@ main {
 .job-number-container p,
 .interview-number-container p,
 .offer-number-container p {
-    color: var(--text-color);
-    font-family: Courier New, Monospace;
+    color: var(--accent-color);
+    font-family: Consolas, Monospace;
     font-size: 5rem;
     font-weight: bold;
-    opacity: 0;
 }
 
 .job-number-container h2,
 .interview-number-container h2,
 .offer-number-container h2 {
-    background-color: var(--accent-color);
-    border-radius: 50px;
-    box-shadow: 0 4px var(--text-color);
+    background-color: var(--background-color);
     color: var(--text-color);
-    font-family: Courier New, Monospace;
+    font-family: Consolas, Monospace;
     font-size: 2.5rem;
     padding: 0 10px 0 10px;
     text-transform: lowercase;
