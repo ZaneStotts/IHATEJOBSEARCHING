@@ -265,6 +265,10 @@ Welcome section media queries (width)
 }
 
 @media screen and (max-width: 315px) {
+    .welcome-section {
+        padding: 0 20px 0 20px;
+    }
+
     .job-number-container p,
     .interview-number-container p,
     .offer-number-container p {
@@ -279,10 +283,6 @@ Welcome section media queries (width)
 }
 
 @media screen and (max-width: 250px) {
-    main {
-        padding: 0 20px 0 20px;
-    }
-
     .job-number-container p,
     .interview-number-container p {
         font-size: 3rem;
@@ -328,7 +328,7 @@ About section styles
 */
 
 .about-section {
-    padding: 35px 30px 0 30px;
+    padding: 100px 30px 0 30px;
 }
 
 .about-section h2 {
@@ -375,6 +375,10 @@ About section media queries (width)
 }
 
 @media screen and (max-width: 315px) {
+    .about-section {
+        padding: 100px 20px 0 20px;
+    }
+
     .about-section h2 {
         font-size: 1.5rem;
     }
@@ -391,7 +395,7 @@ Data section styles
 */
 
 .data-section {
-    padding: 30px 30px 0 30px;
+    padding: 100px 30px 0 30px;
 }
 
 .data-section h2 {
@@ -517,7 +521,7 @@ Application method bar chart styles
     border-bottom: 1px solid var(--text-color);
     margin: auto;
     max-width: 600px;
-    padding: 0 0 20px 0;
+    padding: 0 0 30px 0;
     text-align: center;
 }
 
@@ -638,6 +642,10 @@ Data section media queries
 }
 
 @media screen and (max-width: 315px) {
+    .data-section {
+        padding: 100px 20px 0 20px;
+    }
+
     .data-section h2 {
         font-size: 1.5rem;
     }
@@ -724,7 +732,7 @@ Sort feature styles
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0 30px 0;
+    padding: 0 0 60px 0;
 }
 
 .sort-container form label {
@@ -766,7 +774,7 @@ Applications section styles
 */
 
 .applications-section {
-    padding: 35px 30px 0 30px;
+    padding: 100px 30px 0 30px;
 }
 
 .applications-section h2 {
@@ -864,6 +872,10 @@ Applications section media queries
 }
 
 @media screen and (max-width: 315px) {
+    .applications-section {
+        padding: 100px 20px 0 20px;
+    }
+
     .applications-section h2 {
         font-size: 1.5rem;
     }
@@ -885,12 +897,8 @@ Footer styles
 
 footer {
     background-color: var(--background-color);
+    padding: 100px 0 0 0;
     text-align: center;
-}
-
-footer img {
-    padding: 0 0 8px 0;
-    width: 30px;
 }
 
 footer p {
